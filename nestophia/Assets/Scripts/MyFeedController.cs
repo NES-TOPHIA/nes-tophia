@@ -44,7 +44,7 @@ public class MyFeedController : MonoBehaviour
 
     public void SavePost()
     {
-        DeliverWriting();
+//        DeliverWriting();
         newPostPanel.SetActive(false);
     }
     

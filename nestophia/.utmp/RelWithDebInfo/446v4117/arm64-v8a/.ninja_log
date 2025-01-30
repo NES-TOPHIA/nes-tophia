@@ -1,0 +1,10 @@
+# ninja log v5
+3	584	1738246969244511333	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	5382ed7ad9c6233e
+2	601	1738246969262608524	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	f5e4ef5510211ab6
+1	625	1738246969285573426	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	30c392ecc330df88
+4	625	1738246969287083165	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	e42f2265f05b037c
+5	675	1738246969336051737	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	f337b3aeaadc4742
+2	717	1738246969377641243	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	e6bf9ed2803e1316
+3	802	1738246969463548066	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	32950bd7a6e96ba4
+0	882	1738246969544280679	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	d95e35106d0c6d70
+882	960	1738246969618409220	/Users/m1nz00/Documents/GitHub/nes-tophia/nestophia/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/446v4117/obj/arm64-v8a/libgame.so	a91f64495a7329dc
