@@ -1,14 +1,33 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using System.Collections;
+using System.Collections.Generic;
 
 public class ButtonController : MonoBehaviour
 {
+    public GameObject myFeedPanel;
     public GameObject newPostPanel;
     public GameObject settingPowerBtn;
+    public GameObject signInPanel;
+
+    private string nextSceneName;
 
     public void ClickCancelPostBtn()
     {
         Debug.Log("Cancel Post Button Clicked");
         newPostPanel.SetActive(false);
+    }
+
+    public void ClickAddPostBtn()
+    {
+        Debug.Log("Add Post Button Clicked");
+        newPostPanel.SetActive(true);
+    }
+
+    public void ClickCloseFeedBtn()
+    {
+        Debug.Log("Close Feed Button Clicked");
+        myFeedPanel.SetActive(false);
     }
 
     public void ClickUploadPostBtn()
@@ -22,5 +41,22 @@ public class ButtonController : MonoBehaviour
     {
         Debug.Log("Menu Button Clicked");
         settingPowerBtn.SetActive(!settingPowerBtn.activeSelf);
+    }
+
+    public void ClickSignInBtn()
+    {
+        Debug.Log("Sign In Button Clicked");
+        signInPanel.SetActive(false);
+        //nextSceneName = "HomeScene";
+        //FindObjectOfType<SceneEffect>().FadeToScene(nextSceneName);
+        //SceneManager.LoadScene(nextSceneName);
+    }
+    
+    public void ClickConfirmNameBtn()
+    {
+        Debug.Log("Confirm Name Button Clicked");
+        nextSceneName = "HomeScene";
+        //FindObjectOfType<SceneEffect>().FadeToScene(nextSceneName);
+        SceneManager.LoadScene(nextSceneName);
     }
 }
