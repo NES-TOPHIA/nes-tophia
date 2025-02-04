@@ -3,24 +3,72 @@ using UnityEngine.InputSystem;
 
 public class PlayerMoveController : MonoBehaviour
 {
-    public float moveSpeed = 3.0f; // 이동 속도 설정
-    private Vector2 moveInput; // 이동 입력 저장 변수
+    [SerializeField] private float moveSpeed = 3.0f; 
+    private Vector2 moveInput;
+
+    [SerializeField] private float lookSensitivity = 2.0f;
+    [SerializeField] private float cameraRotationLimit = 80f;  
+    private float currentCameraRotationX;  
+
+    [SerializeField] private Camera camera; 
+    private Rigidbody rigidbody;
+    [SerializeField] private float zoomSpeed = 10.0f;
+
+    void Start()
+    {
+        rigidbody = GetComponent<Rigidbody>(); // Rigidbody 초기화
+    }
 
     void Update()
     {
         MovePlayer();
+        CameraRotation();
+        PlayerRotation();
+        Zoom();
     }
 
     public void OnMove(InputAction.CallbackContext context)
     {
-        moveInput = context.ReadValue<Vector2>(); // Vector2 값 읽기
+        moveInput = context.ReadValue<Vector2>(); 
     }
 
     private void MovePlayer()
     {
-        // W/S는 앞뒤 (Z축), A/D는 좌우 (X축) 방향으로 변환
-        Vector3 moveDirection = new Vector3(-moveInput.y, 0, moveInput.x); 
-        // 캐릭터를 월드 좌표 기준으로 이동 
-        transform.Translate(moveDirection * moveSpeed * Time.deltaTime, Space.World);
+        Vector3 moveDirection = new Vector3(-moveInput.y, 0, moveInput.x); // 이동 방향 수정
+        Vector3 newPosition = rigidbody.position + moveDirection * moveSpeed * Time.deltaTime;
+        rigidbody.MovePosition(newPosition);
+    }
+
+    private void CameraRotation()
+    {
+        float xRotation = Input.GetAxisRaw("Mouse Y") * lookSensitivity;
+        currentCameraRotationX -= xRotation;
+        currentCameraRotationX = Mathf.Clamp(currentCameraRotationX, -cameraRotationLimit, cameraRotationLimit);
+    
+        camera.transform.localRotation = Quaternion.Euler(currentCameraRotationX, transform.eulerAngles.y, 0f);
+    }
+
+    private void PlayerRotation()
+    {
+        float yRotation = Input.GetAxisRaw("Mouse X") * lookSensitivity;
+        Vector3 playerRotationY = new Vector3(0f, yRotation, 0f);
+        
+        if (rigidbody != null)
+        {
+            rigidbody.MoveRotation(rigidbody.rotation * Quaternion.Euler(playerRotationY));
+        }
+        else
+        {
+            transform.Rotate(Vector3.up, yRotation * lookSensitivity);
+        }
+    }
+
+    private void Zoom()
+    {
+        float distance = Input.GetAxis("Mouse ScrollWheel") * zoomSpeed;
+        if (distance != 0)
+        {
+            camera.fieldOfView = Mathf.Clamp(camera.fieldOfView - distance, 30f, 70f);
+        }
     }
 }

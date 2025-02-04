@@ -1909,6 +1909,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 3
+  lookSensitivity: 2
+  cameraRotationLimit: 80
+  camera: {fileID: 34929623}
+  zoomSpeed: 10
 --- !u!114 &907997714
 MonoBehaviour:
   m_ObjectHideFlags: 0
