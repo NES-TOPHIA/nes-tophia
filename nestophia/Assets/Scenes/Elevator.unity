@@ -5204,6 +5204,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ObjectSelectionController
       objectReference: {fileID: 0}
+    - target: {fileID: 3694917766164370787, guid: c25984760effb4811b2bdf2f1b5fab96, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8484369513262112775, guid: c25984760effb4811b2bdf2f1b5fab96, type: 3}
       propertyPath: maxDistance
       value: 3
@@ -7473,7 +7477,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7261483420915273988
 Transform:
   m_ObjectHideFlags: 0
