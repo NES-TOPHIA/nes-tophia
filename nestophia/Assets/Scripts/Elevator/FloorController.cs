@@ -4,17 +4,14 @@ using UnityEngine;
 
 public class FloorController : MonoBehaviour
 {
-    // SceneEffect_Simple sceneEffect;
     public GameObject[] floors;
     public GameObject[] numbers;
 
     void Start()
     {
         InitilizeFloors();
-        // sceneEffect = FindObjectOfType<SceneEffect_Simple>();
     }
 
-    // Start is called before the first frame update
     void InitilizeFloors()
     {
         for(int i = 0; i < floors.Length; i++)
@@ -22,17 +19,21 @@ public class FloorController : MonoBehaviour
             floors[i].SetActive(false);
             Debug.Log(floors[i]);
         }
-        floors[1].SetActive(true);
+        if (floors.Length > 1) floors[1].SetActive(true);  // 배열 범위 체크
     }
 
     void ClickFloor(int newIndex)
     {
-        for(int i = 0; i < floors.Length; i++)
+        if (newIndex >= 0 && newIndex < floors.Length)  // 인덱스 범위 체크
         {
-            floors[i].SetActive(false);
+            for(int i = 0; i < floors.Length; i++)
+            {
+                floors[i].SetActive(false);
+            }
+            floors[newIndex].SetActive(true);
         }
-        floors[newIndex].SetActive(true);
     }
+
     void Update()
     {
         if(Input.GetMouseButtonDown(0))
@@ -42,47 +43,40 @@ public class FloorController : MonoBehaviour
 
             if(Physics.Raycast(ray, out hit))
             {
-                if(hit.collider.gameObject.CompareTag("No.1"))
+                Debug.Log("Raycast hit: " + hit.collider.gameObject.name);
+                // 태그를 확인하고 클릭 처리
+                switch(hit.collider.gameObject.tag)
                 {
-                    ClickFloor(1);
-                    // sceneEffect.FadeToScene("HomeMinju");
-
-                }
-                if(hit.collider.gameObject.CompareTag("No.2"))
-                {
-                    ClickFloor(2);
-                }
-                if(hit.collider.gameObject.CompareTag("No.3"))
-                {
-                    ClickFloor(3);
-                }
-                if(hit.collider.gameObject.CompareTag("No.4"))
-                {
-                    ClickFloor(4);
-                }
-                if(hit.collider.gameObject.CompareTag("No.5"))
-                {
-                    ClickFloor(5);
-                }
-                if(hit.collider.gameObject.CompareTag("No.6"))
-                {
-                    ClickFloor(6);
-                }
-                if(hit.collider.gameObject.CompareTag("No.7"))
-                {
-                    ClickFloor(7);
-                }
-                if(hit.collider.gameObject.CompareTag("No.8"))
-                {
-                    ClickFloor(8);
-                }
-                if(hit.collider.gameObject.CompareTag("No.9"))
-                {
-                    ClickFloor(9);
-                }
-                if(hit.collider.gameObject.CompareTag("BellBtn"))
-                {
-                //     sceneEffect.FadeToScene("Plaza_verse");
+                    case "No.1":
+                        ClickFloor(1);
+                        break;
+                    case "No.2":
+                        ClickFloor(2);
+                        break;
+                    case "No.3":
+                        ClickFloor(3);
+                        break;
+                    case "No.4":
+                        ClickFloor(4);
+                        break;
+                    case "No.5":
+                        ClickFloor(5);
+                        break;
+                    case "No.6":
+                        ClickFloor(6);
+                        break;
+                    case "No.7":
+                        ClickFloor(7);
+                        break;
+                    case "No.8":
+                        ClickFloor(8);
+                        break;
+                    case "No.9":
+                        ClickFloor(9);
+                        break;
+                    case "BellBtn":
+                        Debug.Log("Bell");
+                        break;
                 }
             }
         }   

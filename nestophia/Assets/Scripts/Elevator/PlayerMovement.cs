@@ -17,6 +17,8 @@ public class PlayerMoveController : MonoBehaviour
     void Start()
     {
         rigidbody = GetComponent<Rigidbody>(); // Rigidbody 초기화
+        Cursor.lockState = CursorLockMode.Locked; // 마우스 고정
+        Cursor.visible = false;
     }
 
     void Update()
@@ -34,9 +36,11 @@ public class PlayerMoveController : MonoBehaviour
 
     private void MovePlayer()
     {
-        Vector3 moveDirection = new Vector3(-moveInput.y, 0, moveInput.x); // 이동 방향 수정
-        Vector3 newPosition = rigidbody.position + moveDirection * moveSpeed * Time.deltaTime;
-        rigidbody.MovePosition(newPosition);
+        Vector3 moveDirection = new Vector3(-moveInput.y, 0, moveInput.x); // 기존 이동 방향
+        Vector3 localMove = transform.TransformDirection(moveDirection); // 플레이어 회전에 맞게 변환
+
+        Vector3 newPosition = transform.position + localMove * moveSpeed * Time.deltaTime;
+        transform.position = newPosition;
     }
 
     private void CameraRotation()
@@ -45,22 +49,13 @@ public class PlayerMoveController : MonoBehaviour
         currentCameraRotationX -= xRotation;
         currentCameraRotationX = Mathf.Clamp(currentCameraRotationX, -cameraRotationLimit, cameraRotationLimit);
     
-        camera.transform.localRotation = Quaternion.Euler(currentCameraRotationX, transform.eulerAngles.y, 0f);
+        camera.transform.localRotation = Quaternion.Euler(currentCameraRotationX, 0f, 0f);
     }
 
     private void PlayerRotation()
     {
         float yRotation = Input.GetAxisRaw("Mouse X") * lookSensitivity;
-        Vector3 playerRotationY = new Vector3(0f, yRotation, 0f);
-        
-        if (rigidbody != null)
-        {
-            rigidbody.MoveRotation(rigidbody.rotation * Quaternion.Euler(playerRotationY));
-        }
-        else
-        {
-            transform.Rotate(Vector3.up, yRotation * lookSensitivity);
-        }
+        transform.Rotate(Vector3.up, yRotation);
     }
 
     private void Zoom()
