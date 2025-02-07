@@ -14,6 +14,22 @@ public class PlayerMoveController : MonoBehaviour
     private Rigidbody rigidbody;
     [SerializeField] private float zoomSpeed = 10.0f;
 
+    private static PlayerMoveController instance;
+
+    void Awake()
+    {
+        // 이미 존재하는 인스턴스가 있다면 제거
+        if (instance != null && instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        // 인스턴스 저장 후 파괴되지 않도록 설정
+        instance = this;
+        DontDestroyOnLoad(gameObject);
+    }
+
     void Start()
     {
         rigidbody = GetComponent<Rigidbody>(); // Rigidbody 초기화

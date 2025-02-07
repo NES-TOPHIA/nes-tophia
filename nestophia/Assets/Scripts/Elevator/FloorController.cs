@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FloorController : MonoBehaviour
 {
@@ -45,6 +46,7 @@ public class FloorController : MonoBehaviour
                 if(hit.collider.gameObject.CompareTag("No.1"))
                 {
                     ClickFloor(1);
+                    SceneManager.LoadScene("HomeScene");
                     // sceneEffect.FadeToScene("HomeMinju");
 
                 }
@@ -82,8 +84,8 @@ public class FloorController : MonoBehaviour
                 }
                 if(hit.collider.gameObject.CompareTag("BellBtn"))
                 {
-                //     sceneEffect.FadeToScene("Plaza_verse");
                     ClickFloor(0);
+                    SceneManager.LoadScene("Plaza");
                 }
             }
         }   
