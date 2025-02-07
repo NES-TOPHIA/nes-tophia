@@ -17,8 +17,6 @@ public class PlayerMoveController : MonoBehaviour
     void Start()
     {
         rigidbody = GetComponent<Rigidbody>(); // Rigidbody 초기화
-        Cursor.lockState = CursorLockMode.Locked; // 마우스 고정
-        Cursor.visible = false;
     }
 
     void Update()
@@ -36,7 +34,7 @@ public class PlayerMoveController : MonoBehaviour
 
     private void MovePlayer()
     {
-        Vector3 moveDirection = new Vector3(-moveInput.y, 0, moveInput.x); // 기존 이동 방향
+        Vector3 moveDirection = new Vector3(moveInput.x, 0, moveInput.y); // 기존 이동 방향
         Vector3 localMove = transform.TransformDirection(moveDirection); // 플레이어 회전에 맞게 변환
 
         Vector3 newPosition = transform.position + localMove * moveSpeed * Time.deltaTime;
