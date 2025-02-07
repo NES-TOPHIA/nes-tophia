@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3e7d26dd0ab54187b9b7a21f44092e8, type: 3}
+  m_Name: Database
+  m_EditorClassIdentifier: 
+  objectsData:
+  - <Name>k__BackingField: Carpet
+    <ID>k__BackingField: 0
+    <Size>k__BackingField: {x: 5, y: 4}
+    <Prefab>k__BackingField: {fileID: 3646021647219007242, guid: 2b49c02ec5b014b9993c7fb0e9ab9c5a, type: 3}
+  - <Name>k__BackingField: Chair
+    <ID>k__BackingField: 1
+    <Size>k__BackingField: {x: 1, y: 1}
+    <Prefab>k__BackingField: {fileID: 1277051624078562478, guid: 3c4fd0f2c946e4fe1abad6d5eda12216, type: 3}
+  - <Name>k__BackingField: Bed
+    <ID>k__BackingField: 2
+    <Size>k__BackingField: {x: 4, y: 3}
+    <Prefab>k__BackingField: {fileID: 6860186895754505362, guid: 647fe761a95da477fa034e2584cd126d, type: 3}
+  - <Name>k__BackingField: Table
+    <ID>k__BackingField: 3
+    <Size>k__BackingField: {x: 3, y: 2}
+    <Prefab>k__BackingField: {fileID: 5255659555513423847, guid: 2463d1777f0e14df595bf1319630fab0, type: 3}
+  - <Name>k__BackingField: Mirror
+    <ID>k__BackingField: 4
+    <Size>k__BackingField: {x: 1, y: 2}
+    <Prefab>k__BackingField: {fileID: 5543794363158732601, guid: 1e7c0eb414fab4bbdb5b2a1dbaf976ea, type: 3}

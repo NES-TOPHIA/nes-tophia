@@ -9,6 +9,7 @@ public class ButtonController : MonoBehaviour
     public GameObject newPostPanel;
     public GameObject settingPowerBtn;
     public GameObject signInPanel;
+    public GameObject DMPanel;
 
     private string nextSceneName;
 
@@ -43,6 +44,12 @@ public class ButtonController : MonoBehaviour
         settingPowerBtn.SetActive(!settingPowerBtn.activeSelf);
     }
 
+    public void ClickDMBtn()
+    {
+        Debug.Log("DM Button Clicked");
+        DMPanel.SetActive(!DMPanel.activeSelf);
+    }
+
     public void ClickSignInBtn()
     {
         Debug.Log("Sign In Button Clicked");
@@ -55,6 +62,14 @@ public class ButtonController : MonoBehaviour
     public void ClickConfirmNameBtn()
     {
         Debug.Log("Confirm Name Button Clicked");
+        nextSceneName = "HomeScene";
+        //FindObjectOfType<SceneEffect>().FadeToScene(nextSceneName);
+        SceneManager.LoadScene(nextSceneName);
+    }
+
+    public void ClickHomeBtn()
+    {
+        Debug.Log("Home Button Clicked");
         nextSceneName = "HomeScene";
         //FindObjectOfType<SceneEffect>().FadeToScene(nextSceneName);
         SceneManager.LoadScene(nextSceneName);
