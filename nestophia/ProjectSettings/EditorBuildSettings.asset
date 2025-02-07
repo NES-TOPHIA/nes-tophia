@@ -9,6 +9,12 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: 55daccc09a3b69647bbab145b54a3ab3
   - enabled: 1
+    path: Assets/Scenes/Plaza.unity
+    guid: 471cd45e1fada4ed0bf7309eebb57079
+  - enabled: 1
+    path: Assets/Scenes/Elevator.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
     path: Assets/Scenes/HomeScene.unity
     guid: aa0d46e7a75a94a62958d23acb31f3c8
   - enabled: 1
