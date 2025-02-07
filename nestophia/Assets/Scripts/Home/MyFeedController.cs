@@ -7,13 +7,13 @@ using System.Collections.Generic;
 public class MyFeedController : MonoBehaviour
 {
     public GameObject myFeedPanel;
-    public InputActionProperty buttonAction;
+    public GameObject newPostPanel;
 
-    private GameObject newPostPanel;
-    private GameObject listContent;
-    private GameObject postPanel;
+    public InputActionProperty buttonAction;
+    public GameObject listContent;
+    public GameObject postPanel;
+
     private GameObject player;
-    private string titleText;
     private string contentText;
     private GameObject addPost;
 
@@ -37,14 +37,20 @@ public class MyFeedController : MonoBehaviour
         }
     }
 
-    private void OpenMyFeedPanel()
+    private void OnMouseDown() 
+    {
+        Debug.Log("Book Pressed");
+        OpenMyFeedPanel();
+    }
+
+    public void OpenMyFeedPanel()
     {
         myFeedPanel.SetActive(true);
     }
 
     public void SavePost()
     {
-//        DeliverWriting();
+        DeliverWriting();
         newPostPanel.SetActive(false);
     }
     
@@ -53,13 +59,9 @@ public class MyFeedController : MonoBehaviour
         GameObject post = Instantiate(postPanel) as GameObject;
         post.transform.SetParent(listContent.transform, false);
 
-        titleText = newPostPanel.transform.GetChild(3).GetChild(0).GetChild(2).GetComponent<TMP_Text>().text;
-        post.transform.GetChild(2).GetComponent<TMP_Text>().text = titleText;
+        contentText = newPostPanel.transform.GetChild(1).GetChild(0).GetChild(2).GetComponent<TMP_Text>().text;
+        post.transform.GetChild(1).GetChild(1).GetChild(0).GetComponent<TMP_Text>().text = contentText;
 
-        contentText = newPostPanel.transform.GetChild(4).GetChild(0).GetChild(2).GetComponent<TMP_Text>().text;
-        post.transform.GetChild(3).GetComponent<TMP_Text>().text = contentText;
-
-        newPostPanel.transform.GetChild(3).GetComponent<TMP_InputField>().text = "";
-        newPostPanel.transform.GetChild(4).GetComponent<TMP_InputField>().text = "";
+        newPostPanel.transform.GetChild(1).GetComponent<TMP_InputField>().text = "";
     }
 }

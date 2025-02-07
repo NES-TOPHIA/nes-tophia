@@ -33,6 +33,7 @@ public class ClickCarpet : MonoBehaviour
     {
         Debug.Log("Furniture Scene Loading...");
         nextSceneName = "FurnitureScene";
-        FindObjectOfType<SceneEffect>().FadeToScene(nextSceneName);
+        // FindObjectOfType<SceneEffect>().FadeToScene(nextSceneName);
+        SceneManager.LoadScene(nextSceneName);
     }
 }

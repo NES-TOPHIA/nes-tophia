@@ -32,6 +32,7 @@ public class SceneEffect : MonoBehaviour
         while (alpha > 0) {
             alpha -= Time.deltaTime * fadeSpeed;
             fadeImage.color = new Color(0, 0, 0, alpha);
+            Destroy(fadeImage, 3.0f);
             yield return null;
         }
     }
