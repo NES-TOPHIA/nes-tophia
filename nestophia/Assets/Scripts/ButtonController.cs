@@ -35,7 +35,6 @@ public class ButtonController : MonoBehaviour
     {
         Debug.Log("Upload Post Button Clicked");
         newPostPanel.SetActive(false);
-        // 여기에 게시물 업로드 코드 작성 or 다른 스크립트 생성
     }
 
     public void ClickMenuBtn()
@@ -54,24 +53,30 @@ public class ButtonController : MonoBehaviour
     {
         Debug.Log("Sign In Button Clicked");
         signInPanel.SetActive(false);
-        //nextSceneName = "HomeScene";
-        //FindObjectOfType<SceneEffect>().FadeToScene(nextSceneName);
-        //SceneManager.LoadScene(nextSceneName);
     }
     
     public void ClickConfirmNameBtn()
     {
         Debug.Log("Confirm Name Button Clicked");
         nextSceneName = "HomeScene";
-        //FindObjectOfType<SceneEffect>().FadeToScene(nextSceneName);
-        SceneManager.LoadScene(nextSceneName);
+        FindObjectOfType<SceneEffect>().FadeToScene(nextSceneName);
+        // SceneManager.LoadScene(nextSceneName);
     }
 
     public void ClickHomeBtn()
     {
         Debug.Log("Home Button Clicked");
         nextSceneName = "HomeScene";
-        //FindObjectOfType<SceneEffect>().FadeToScene(nextSceneName);
-        SceneManager.LoadScene(nextSceneName);
+        FindObjectOfType<SceneEffect>().FadeToScene(nextSceneName);
+        // SceneManager.LoadScene(nextSceneName);
+    }
+
+    public void ClickPowerBtn()
+    {
+        #if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+        #else
+            Application.Quit(); // 어플리케이션 종료
+        #endif  
     }
 }

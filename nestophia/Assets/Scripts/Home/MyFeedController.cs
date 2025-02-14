@@ -61,7 +61,12 @@ public class MyFeedController : MonoBehaviour
 
         contentText = newPostPanel.transform.GetChild(1).GetChild(0).GetChild(2).GetComponent<TMP_Text>().text;
         post.transform.GetChild(1).GetChild(1).GetChild(0).GetComponent<TMP_Text>().text = contentText;
+        
+        ResetContent();
+    }
 
+    public void ResetContent()
+    {
         newPostPanel.transform.GetChild(1).GetComponent<TMP_InputField>().text = "";
     }
 }
