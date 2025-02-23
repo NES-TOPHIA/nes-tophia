@@ -15,8 +15,8 @@ MonoBehaviour:
   objectsData:
   - <Name>k__BackingField: Carpet
     <ID>k__BackingField: 0
-    <Size>k__BackingField: {x: 5, y: 4}
-    <Prefab>k__BackingField: {fileID: 3646021647219007242, guid: 2b49c02ec5b014b9993c7fb0e9ab9c5a, type: 3}
+    <Size>k__BackingField: {x: 4, y: 3}
+    <Prefab>k__BackingField: {fileID: 6587480301217930878, guid: 523873fc9002b974c8a0292076ec82af, type: 3}
   - <Name>k__BackingField: Chair
     <ID>k__BackingField: 1
     <Size>k__BackingField: {x: 1, y: 1}
@@ -27,7 +27,7 @@ MonoBehaviour:
     <Prefab>k__BackingField: {fileID: 6860186895754505362, guid: 647fe761a95da477fa034e2584cd126d, type: 3}
   - <Name>k__BackingField: Table
     <ID>k__BackingField: 3
-    <Size>k__BackingField: {x: 3, y: 2}
+    <Size>k__BackingField: {x: 2, y: 2}
     <Prefab>k__BackingField: {fileID: 5255659555513423847, guid: 2463d1777f0e14df595bf1319630fab0, type: 3}
   - <Name>k__BackingField: Mirror
     <ID>k__BackingField: 4

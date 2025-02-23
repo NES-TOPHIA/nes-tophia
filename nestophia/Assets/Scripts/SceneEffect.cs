@@ -12,6 +12,7 @@ public class SceneEffect : MonoBehaviour
     // FindObjectOfType<SceneEffect>().FadeToScene(nextSceneName);
 
     public Image fadeImage;
+    public GameObject fadeCanvas;
     public float fadeSpeed = 1.0f;
 
     private bool isFadingOut = false;
@@ -32,9 +33,9 @@ public class SceneEffect : MonoBehaviour
         while (alpha > 0) {
             alpha -= Time.deltaTime * fadeSpeed;
             fadeImage.color = new Color(0, 0, 0, alpha);
-            Destroy(fadeImage, 3.0f);
             yield return null;
         }
+        fadeCanvas.SetActive(false);
     }
 
     IEnumerator FadeOutAndLoadScene(string sceneName) {
@@ -43,6 +44,8 @@ public class SceneEffect : MonoBehaviour
         }
         isFadingOut = true;
 
+        fadeCanvas.SetActive(true);
+        
         float alpha = 0.0f;
         while (alpha < 1) {
             alpha += Time.deltaTime * fadeSpeed;
