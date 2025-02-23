@@ -1,16 +1,17 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
 
 public class PlayerMoveController : MonoBehaviour
 {
-    [SerializeField] private float moveSpeed = 3.0f; 
+    [SerializeField] private float moveSpeed = 3.0f;
     private Vector2 moveInput;
 
     [SerializeField] private float lookSensitivity = 2.0f;
-    [SerializeField] private float cameraRotationLimit = 80f;  
-    private float currentCameraRotationX;  
+    [SerializeField] private float cameraRotationLimit = 80f;
+    private float currentCameraRotationX;
 
-    [SerializeField] private Camera camera; 
+    [SerializeField] private Camera camera;
     private Rigidbody rigidbody;
     [SerializeField] private float zoomSpeed = 10.0f;
 
@@ -18,21 +19,35 @@ public class PlayerMoveController : MonoBehaviour
 
     void Awake()
     {
-        // 이미 존재하는 인스턴스가 있다면 제거
         if (instance != null && instance != this)
         {
             Destroy(gameObject);
             return;
         }
 
-        // 인스턴스 저장 후 파괴되지 않도록 설정
         instance = this;
         DontDestroyOnLoad(gameObject);
     }
 
     void Start()
     {
-        rigidbody = GetComponent<Rigidbody>(); // Rigidbody 초기화
+        rigidbody = GetComponent<Rigidbody>(); 
+
+        // 씬이 변경될 때마다 위치, 속도 업데이트
+        SceneManager.sceneLoaded += OnSceneLoaded;
+        ApplySceneSettings(SceneManager.GetActiveScene().name);
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        ApplySceneSettings(scene.name);
+    }
+
+    private void ApplySceneSettings(string sceneName)
+    {
+        var settings = SceneData.Instance.GetSceneSettings(sceneName);
+        transform.position = settings.position;
+        moveSpeed = settings.speed;
     }
 
     void Update()
@@ -45,13 +60,13 @@ public class PlayerMoveController : MonoBehaviour
 
     public void OnMove(InputAction.CallbackContext context)
     {
-        moveInput = context.ReadValue<Vector2>(); 
+        moveInput = context.ReadValue<Vector2>();
     }
 
     private void MovePlayer()
     {
-        Vector3 moveDirection = new Vector3(moveInput.x, 0, moveInput.y); // 기존 이동 방향
-        Vector3 localMove = transform.TransformDirection(moveDirection); // 플레이어 회전에 맞게 변환
+        Vector3 moveDirection = new Vector3(moveInput.x, 0, moveInput.y);
+        Vector3 localMove = transform.TransformDirection(moveDirection);
 
         Vector3 newPosition = transform.position + localMove * moveSpeed * Time.deltaTime;
         transform.position = newPosition;
@@ -62,7 +77,7 @@ public class PlayerMoveController : MonoBehaviour
         float xRotation = Input.GetAxisRaw("Mouse Y") * lookSensitivity;
         currentCameraRotationX -= xRotation;
         currentCameraRotationX = Mathf.Clamp(currentCameraRotationX, -cameraRotationLimit, cameraRotationLimit);
-    
+
         camera.transform.localRotation = Quaternion.Euler(currentCameraRotationX, 0f, 0f);
     }
 
