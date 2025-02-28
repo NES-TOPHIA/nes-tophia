@@ -8,7 +8,6 @@ public class ButtonController : MonoBehaviour
     public GameObject myFeedPanel;
     public GameObject newPostPanel;
     public GameObject settingPowerBtn;
-    public GameObject signInPanel;
     public GameObject DMPanel;
 
     private string nextSceneName;
@@ -47,20 +46,6 @@ public class ButtonController : MonoBehaviour
     {
         Debug.Log("DM Button Clicked");
         DMPanel.SetActive(!DMPanel.activeSelf);
-    }
-
-    public void ClickSignInBtn()
-    {
-        Debug.Log("Sign In Button Clicked");
-        signInPanel.SetActive(false);
-    }
-    
-    public void ClickConfirmNameBtn()
-    {
-        Debug.Log("Confirm Name Button Clicked");
-        nextSceneName = "HomeScene";
-        FindObjectOfType<SceneEffect>().FadeToScene(nextSceneName);
-        // SceneManager.LoadScene(nextSceneName);
     }
 
     public void ClickHomeBtn()
