@@ -23,6 +23,20 @@ public class ClickCarpet : MonoBehaviour
             Debug.Log("Carpet Pressed");
             LoadFurnitureScene();
         }
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+
+            if (Physics.Raycast(ray, out hit))
+            {
+                if (hit.collider.gameObject.CompareTag("Btn"))
+                {
+                    LoadFurnitureScene();
+                }
+            }
+        }
     }
 
     private void OnMouseDown() {

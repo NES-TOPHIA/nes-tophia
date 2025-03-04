@@ -16,7 +16,7 @@ MonoBehaviour:
   - <Name>k__BackingField: Carpet
     <ID>k__BackingField: 0
     <Size>k__BackingField: {x: 4, y: 3}
-    <Prefab>k__BackingField: {fileID: 6587480301217930878, guid: 523873fc9002b974c8a0292076ec82af, type: 3}
+    <Prefab>k__BackingField: {fileID: 3646021647219007242, guid: 2b49c02ec5b014b9993c7fb0e9ab9c5a, type: 3}
   - <Name>k__BackingField: Chair
     <ID>k__BackingField: 1
     <Size>k__BackingField: {x: 1, y: 1}
