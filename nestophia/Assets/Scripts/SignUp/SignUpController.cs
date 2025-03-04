@@ -1,7 +1,7 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.InputSystem;
-//using BackEnd;
+using BackEnd;
 
 public class SignUpController : MonoBehaviour
 {
@@ -36,8 +36,7 @@ public class SignUpController : MonoBehaviour
     private bool IDDuplicateCheck()
     {
         // 서버 연결
-        // return BackendLogin.Instance.SignUp(ID, PW);
-        return true;
+        return BackendLogin.Instance.SignUp(ID, PW);
     }
 
     private bool BlankCheck()

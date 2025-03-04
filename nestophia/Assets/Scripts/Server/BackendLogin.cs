@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//using BackEnd;
+using BackEnd;
 
 public class BackendLogin
 {
@@ -19,8 +19,8 @@ public class BackendLogin
             return _instance;
         }
     }
-/**
-    public void SignUp(string id, string pw)
+
+    public bool SignUp(string id, string pw)
     {
         Debug.Log("회원 가입을 요청합니다.");
         
@@ -29,13 +29,15 @@ public class BackendLogin
         if (bro.IsSuccess())
         {
             Debug.Log("회원 가입에 성공했습니다. : " + bro);
+            return true;
         }
         else
         {
             Debug.LogError("회원 가입에 실패했습니다. : " + bro);
+            return false;
         }
     }
-
+/**
     public void Login(string id, string pw)
     {
         Debug.Log("로그인을 요청합니다.");
