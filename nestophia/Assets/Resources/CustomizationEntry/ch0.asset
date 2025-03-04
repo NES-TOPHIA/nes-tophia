@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   entryName: ch0
   icon: {fileID: 21300000, guid: 6beb1c646a24047be8f8e46b2d84707c, type: 3}
-  prefab: {fileID: 0}
+  prefab: {fileID: 3397227775404619446, guid: 02477e3fc35b94770be60e7aefa99e57, type: 3}
