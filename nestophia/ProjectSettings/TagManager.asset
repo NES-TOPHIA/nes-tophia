@@ -5,6 +5,21 @@ TagManager:
   serializedVersion: 3
   tags:
   - Anchor
+  - No.8
+  - No.5
+  - No.2
+  - No.6
+  - No.4
+  - No.7
+  - SelectableBtn
+  - No.1
+  - No.3
+  - No.9
+  - BellBtn
+  - Search
+  - Feed
+  - Btn
+  - MirrorBtn
   layers:
   - Default
   - TransparentFX
