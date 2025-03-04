@@ -6,23 +6,23 @@ using UnityEngine.SceneManagement;
 public class SignInController : MonoBehaviour
 {
     public TMP_InputField nicknameInput;
-    public TMP_InputField emailInput;
+    public TMP_InputField IDInput;
     public GameObject signInPanel;
     public GameObject blankErrorMessage;
 
     private string nextSceneName;
     private string nickname;
-    private string email;
+    private string ID;
 
-    public void SetEmail()
+    public void SetID()
     {
         blankErrorMessage.SetActive(false);
-        email = emailInput.GetComponent<TMP_InputField>().text;
-        EmailDuplicateCheck();
-        if (EmailBlankCheck() == true) 
+        ID = IDInput.GetComponent<TMP_InputField>().text;
+        IDDuplicateCheck();
+        if (IDBlankCheck() == true) 
         {
-            Debug.Log(email);
-            ConfirmEmail();
+            Debug.Log(ID);
+            ConfirmID();
         }
     }
 
@@ -38,7 +38,7 @@ public class SignInController : MonoBehaviour
         }
     }
 
-    private void EmailDuplicateCheck()
+    private void IDDuplicateCheck()
     {
         // 서버 연결
     }
@@ -48,9 +48,9 @@ public class SignInController : MonoBehaviour
         // 서버 연결
     }
 
-    private bool EmailBlankCheck()
+    private bool IDBlankCheck()
     {
-        if (email != "")
+        if (ID != "")
         {
             return true;
         } 
@@ -74,7 +74,7 @@ public class SignInController : MonoBehaviour
         }
     }
 
-    private void ConfirmEmail()
+    private void ConfirmID()
     {
         Debug.Log("Sign In Button Clicked");
         signInPanel.SetActive(false);

@@ -35,6 +35,21 @@ public class MyFeedController : MonoBehaviour
             Debug.Log("Book Pressed");
             OpenMyFeedPanel();
         }
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+
+            if (Physics.Raycast(ray, out hit))
+            {
+                if (hit.collider.gameObject.CompareTag("Book"))
+                {
+                    Debug.Log("Book Pressed");
+                    OpenMyFeedPanel();
+                }
+            }
+        }
     }
 
     private void OnMouseDown() 
