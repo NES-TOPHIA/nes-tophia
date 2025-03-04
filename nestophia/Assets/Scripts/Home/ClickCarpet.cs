@@ -31,7 +31,7 @@ public class ClickCarpet : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit))
             {
-                if (hit.collider.gameObject.CompareTag("Btn"))
+                if (hit.collider.gameObject.CompareTag("Furniture"))
                 {
                     LoadFurnitureScene();
                 }
@@ -39,9 +39,9 @@ public class ClickCarpet : MonoBehaviour
         }
     }
 
-    private void OnMouseDown() {
-        LoadFurnitureScene();
-    }
+    //private void OnMouseDown() {
+    //    LoadFurnitureScene();
+    //}
 
     public void LoadFurnitureScene() 
     {
