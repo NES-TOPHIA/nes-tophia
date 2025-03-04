@@ -54,8 +54,22 @@ public class PlacementState : IBuildingState
             return;
         }
 
+        Vector3 gridCellPosition = grid.CellToWorld(gridPosition);
+
+        if (database.objectsData[selectedObjectIndex].ID != 0)
+        {
+            if (database.objectsData[selectedObjectIndex].ID == 4)
+            {
+                gridCellPosition.y = 1.3f;
+            }
+            else 
+            {
+                gridCellPosition.y = 0.6f;
+            }
+        }
+        
         int index = objectPlacer.PlaceObject(database.objectsData[selectedObjectIndex].Prefab,
-            grid.CellToWorld(gridPosition));
+            gridCellPosition);
 
         GridData selectedData = database.objectsData[selectedObjectIndex].ID == 0 ?
             floorData :

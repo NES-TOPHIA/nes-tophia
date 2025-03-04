@@ -23,11 +23,26 @@ public class ClickMirror : MonoBehaviour
             Debug.Log("Mirror Pressed");
             LoadClosetScene();
         }
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+
+            if (Physics.Raycast(ray, out hit))
+            {
+                if (hit.collider.gameObject.CompareTag("Btn"))
+                {
+                    Debug.Log("Mirror Clicked");
+                    // LoadClosetScene();
+                }
+            }
+        }
     }
 
-    private void OnMouseDown() {
-        LoadClosetScene();
-    }
+    //private void OnMouseDown() {
+    //    LoadClosetScene();
+    //}
 
     public void LoadClosetScene() 
     {
