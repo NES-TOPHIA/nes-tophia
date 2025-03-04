@@ -8,7 +8,12 @@ public class ClickMirror : MonoBehaviour
 {
     public InputActionProperty buttonAction;
 
-    private string nextSceneName;
+    public Canvas customCanvas;
+
+    void Start()
+    {
+        customCanvas.gameObject.SetActive(false);
+    }
 
     void Update() 
     {
@@ -21,7 +26,7 @@ public class ClickMirror : MonoBehaviour
         if (OVRInput.GetUp(OVRInput.Button.Four))
         {
             Debug.Log("Mirror Pressed");
-            LoadClosetScene();
+            
         }
 
         if (Input.GetMouseButtonDown(0))
@@ -31,10 +36,10 @@ public class ClickMirror : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit))
             {
-                if (hit.collider.gameObject.CompareTag("Btn"))
+                if (hit.collider.gameObject.CompareTag("MirrorBtn"))
                 {
                     Debug.Log("Mirror Clicked");
-                    // LoadClosetScene();
+                    customCanvas.gameObject.SetActive(true);
                 }
             }
         }
@@ -44,10 +49,10 @@ public class ClickMirror : MonoBehaviour
     //    LoadClosetScene();
     //}
 
-    public void LoadClosetScene() 
-    {
-        Debug.Log("Closet Scene Loading...");
-        nextSceneName = "ClosetScene";
-        FindObjectOfType<SceneEffect>().FadeToScene(nextSceneName);
-    }
+    // public void LoadClosetScene() 
+    // {
+    //     Debug.Log("Closet Scene Loading...");
+    //     nextSceneName = "ClosetScene";
+    //     FindObjectOfType<SceneEffect>().FadeToScene(nextSceneName);
+    // }
 }
