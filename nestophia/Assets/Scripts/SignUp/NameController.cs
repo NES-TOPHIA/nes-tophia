@@ -2,7 +2,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
-// using BackEnd;
+using BackEnd;
 
 public class NameController : MonoBehaviour
 {
@@ -53,18 +53,17 @@ public class NameController : MonoBehaviour
     private bool NickNameDuplicateCheck()
     {
         // 서버 연결
-        //BackendReturnObject bro = Backend.BMember.CheckNicknameDuplication("thebackend");
-        //if (bro.IsSuccess())
-        //{
-        //  Debug.Log("해당 닉네임은 중복되지 않습니다.");
-        //  return true;
-        //}
-        //else
-        //{
-        //  Debug.Log("해당 닉네임은 중복됩니다.");
-        //  return false;
-        //}
-        return true;
+        BackendReturnObject bro = Backend.BMember.CheckNicknameDuplication("thebackend");
+        if (bro.IsSuccess())
+        {
+          Debug.Log("해당 닉네임은 중복되지 않습니다.");
+          return true;
+        }
+        else
+        {
+          Debug.Log("해당 닉네임은 중복됩니다.");
+          return false;
+        }
     }
 
     private void ConfirmNickname()
