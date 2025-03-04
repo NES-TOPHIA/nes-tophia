@@ -7176,6 +7176,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Padding: {x: -8, y: -5, z: -8, w: -5}
   m_Softness: {x: 0, y: 0}
+--- !u!1 &919681900 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3397227775404619446, guid: 02477e3fc35b94770be60e7aefa99e57, type: 3}
+  m_PrefabInstance: {fileID: 1285447709}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &927932841
 GameObject:
   m_ObjectHideFlags: 0
@@ -13613,7 +13618,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!81 &2034148329
 AudioListener:
   m_ObjectHideFlags: 0
@@ -15058,6 +15063,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterModel: {fileID: 8448533022349120950}
+  basicCharacter: {fileID: 919681900}
   customizationEntries:
   - {fileID: 11400000, guid: 1f05798733f9044f2a8f44de062e41aa, type: 2}
   - {fileID: 11400000, guid: cde427a557231484389b662c1952592e, type: 2}
@@ -19533,7 +19539,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1885955957046384953
 Transform:
   m_ObjectHideFlags: 0
@@ -22240,6 +22246,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterModel: {fileID: 0}
+  basicCharacter: {fileID: 0}
   customizationEntries:
   - {fileID: 11400000, guid: cde427a557231484389b662c1952592e, type: 2}
   - {fileID: 11400000, guid: 611e31b7be0a84d1d9ab4fbf1a3d5773, type: 2}
@@ -24758,10 +24765,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: MouseEvent, Assembly-CSharp
-        m_MethodName: HideFeed
-        m_Mode: 1
+      - m_Target: {fileID: 7896755177944567992}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -32389,7 +32396,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1880892929357293671}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.81, y: 0.5, z: -1.97}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -32399,7 +32406,7 @@ Transform:
   - {fileID: 286441057588294432}
   - {fileID: 6219124382934435067}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &7152284383700642408
 Transform:
   m_ObjectHideFlags: 0
