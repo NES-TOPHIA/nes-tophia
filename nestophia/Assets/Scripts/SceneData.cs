@@ -23,7 +23,7 @@ public class SceneData : MonoBehaviour
     private Dictionary<string, (Vector3 position, float speed)> sceneSettings = new Dictionary<string, (Vector3, float)>
     {
         { "Elevator", (new Vector3(4.05f, -1.3f, 0.85f),3.0f) },  
-        { "HomeScene", (new Vector3(-2.0f, 0.1f, -3.0f), 3.0f) }, 
+        { "HomeScene", (new Vector3(-2.0f, 0.3f, -3.0f), 3.0f) }, 
         { "Plaza", (new Vector3(-6.5f, -6.0f, -71.0f), 8.0f) } 
     };
 
