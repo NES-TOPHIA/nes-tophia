@@ -54,7 +54,7 @@ public class NameController : MonoBehaviour
     private bool NickNameDuplicateCheck()
     {
         // 서버 연결
-        BackendReturnObject bro = Backend.BMember.CheckNicknameDuplication("thebackend");
+        BackendReturnObject bro = Backend.BMember.CheckNicknameDuplication(nickname);
         if (bro.IsSuccess())
         {
           Debug.Log("해당 닉네임은 중복되지 않습니다.");
