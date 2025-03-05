@@ -46,7 +46,7 @@ public class FloorController : MonoBehaviour
                 if(hit.collider.gameObject.CompareTag("No.1"))
                 {
                     ClickFloor(1);
-                    SceneManager.LoadScene("HomeScene");
+                    FindObjectOfType<SceneEffect>().FadeToScene("HomeScene");
                     // sceneEffect.FadeToScene("HomeMinju");
 
                 }
@@ -85,7 +85,7 @@ public class FloorController : MonoBehaviour
                 if(hit.collider.gameObject.CompareTag("BellBtn"))
                 {
                     ClickFloor(0);
-                    SceneManager.LoadScene("Plaza");
+                    FindObjectOfType<SceneEffect>().FadeToScene("Plaza");
                 }
             }
         }   

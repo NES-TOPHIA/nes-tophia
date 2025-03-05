@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ElevatorDoor : MonoBehaviour
 {
@@ -41,7 +42,14 @@ public class ElevatorDoor : MonoBehaviour
         }
         else
         {
-            StartCoroutine(OpenAndCloseDoor());
+            if(SceneManager.GetActiveScene().name == "HomeScene")
+            {
+                GoElevator();
+            }
+            else
+            {
+                StartCoroutine(OpenAndCloseDoor());
+            }
         }
     }
 
@@ -54,6 +62,12 @@ public class ElevatorDoor : MonoBehaviour
             yield return null;
         }
         StartCoroutine(CloseDoorAfterDelay(6f));
+    }
+
+    void GoElevator()
+    {
+        FindObjectOfType<SceneEffect>().FadeToScene("Elevator");
+        Debug.Log("change Elevator Scene");
     }
     void DoorOpen()
     {
