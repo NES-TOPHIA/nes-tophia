@@ -36,12 +36,6 @@ public class ButtonController : MonoBehaviour
         newPostPanel.SetActive(false);
     }
 
-    public void ClickMenuBtn()
-    {
-        Debug.Log("Menu Button Clicked");
-        settingPowerBtn.SetActive(!settingPowerBtn.activeSelf);
-    }
-
     public void ClickDMBtn()
     {
         Debug.Log("DM Button Clicked");
@@ -56,6 +50,12 @@ public class ButtonController : MonoBehaviour
         // SceneManager.LoadScene(nextSceneName);
     }
 
+    public void ClickMenuBtn()
+    {
+        Debug.Log("Menu Button Clicked");
+        settingPowerBtn.SetActive(!settingPowerBtn.activeSelf);
+    }
+    
     public void ClickPowerBtn()
     {
         #if UNITY_EDITOR
@@ -63,5 +63,20 @@ public class ButtonController : MonoBehaviour
         #else
             Application.Quit(); // 어플리케이션 종료
         #endif  
+    }
+
+    public void ClickSettingBtn()
+    {
+        // 세팅 탭 보이게
+    }
+    
+    public void ClickMembeWithdrawBtn()
+    {
+        // 회원 탈퇴
+        // 즉시 탈퇴
+        //Backend.BMember.WithdrawAccount(callback  => {
+        // 이후 처리
+        //SceneManager.LoadScene("StartScene"); // 시작 화면으로 이동
+        //});
     }
 }

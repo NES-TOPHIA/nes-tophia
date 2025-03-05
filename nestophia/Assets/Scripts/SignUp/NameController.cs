@@ -24,6 +24,7 @@ public class NameController : MonoBehaviour
             if (NickNameDuplicateCheck() == true)
             {
                 Debug.Log(nickname);
+                BackendLogin.Instance.UpdateNickname(nickname);
                 ConfirmNickname();
             }
             else
@@ -73,4 +74,6 @@ public class NameController : MonoBehaviour
         FindObjectOfType<SceneEffect>().FadeToScene(nextSceneName);
         // SceneManager.LoadScene(nextSceneName);
     }
+
+    //public void Change
 }
