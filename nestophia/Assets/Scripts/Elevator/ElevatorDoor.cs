@@ -46,6 +46,10 @@ public class ElevatorDoor : MonoBehaviour
             {
                 GoElevator();
             }
+            else if(SceneManager.GetActiveScene().name == "Plaza")
+            {
+                GoElevator();
+            }
             else
             {
                 StartCoroutine(OpenAndCloseDoor());
