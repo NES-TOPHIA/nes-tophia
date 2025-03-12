@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
 using System.Collections.Generic;
+using BackEnd;
 
 public class ButtonController : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class ButtonController : MonoBehaviour
     public GameObject newPostPanel;
     public GameObject settingPowerBtn;
     public GameObject DMPanel;
+    public GameObject settingPanel;
 
     private string nextSceneName;
 
@@ -67,16 +69,17 @@ public class ButtonController : MonoBehaviour
 
     public void ClickSettingBtn()
     {
-        // 세팅 탭 보이게
+        settingPanel.SetActive(!settingPanel.activeSelf);
     }
     
-    public void ClickMembeWithdrawBtn()
+    public void ClickMemberWithdrawBtn()
     {
-        // 회원 탈퇴
         // 즉시 탈퇴
-        //Backend.BMember.WithdrawAccount(callback  => {
-        // 이후 처리
-        //SceneManager.LoadScene("StartScene"); // 시작 화면으로 이동
-        //});
+        Backend.BMember.WithdrawAccount(callback  => {
+            // 이후 처리
+            Debug.Log("회원 탈퇴 성공");
+            //SceneManager.LoadScene("IntroScene"); // 시작 화면으로 이동
+            SceneManager.LoadScene("SignInScene");
+        });
     }
 }
