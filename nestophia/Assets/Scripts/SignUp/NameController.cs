@@ -38,6 +38,25 @@ public class NameController : MonoBehaviour
         }
     }
 
+    public void ChangeNickname()
+    {
+        duplicateErrorMessage.SetActive(false);
+
+        nickname = nicknameInput.GetComponent<TMP_InputField>().text;
+        if (BlankCheck() == true) 
+        {
+            if (NickNameDuplicateCheck() == true)
+            {
+                Debug.Log(nickname);
+                BackendLogin.Instance.UpdateNickname(nickname);
+            }
+            else
+            {
+                duplicateErrorMessage.SetActive(true);
+            }
+        }
+    }
+
     private bool BlankCheck()
     {
         if (nickname != "")
@@ -46,7 +65,6 @@ public class NameController : MonoBehaviour
         } 
         else
         {
-            blankErrorMessage.SetActive(true);
             return false;
         }
     }
@@ -74,6 +92,4 @@ public class NameController : MonoBehaviour
         FindObjectOfType<SceneEffect>().FadeToScene(nextSceneName);
         // SceneManager.LoadScene(nextSceneName);
     }
-
-    //public void Change
 }
