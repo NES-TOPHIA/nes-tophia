@@ -1121,6 +1121,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterModel: {fileID: 2131833328399710009}
+  basicCharacter: {fileID: 2364221367657583676}
   customizationEntries:
   - {fileID: 11400000, guid: 1f05798733f9044f2a8f44de062e41aa, type: 2}
   - {fileID: 11400000, guid: cde427a557231484389b662c1952592e, type: 2}
@@ -1177,6 +1178,7 @@ GameObject:
   - component: {fileID: 6014368702890868148}
   - component: {fileID: 2898198648496655433}
   - component: {fileID: 3248313728243820779}
+  - component: {fileID: 8485427205708399800}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1293,6 +1295,31 @@ MonoBehaviour:
   cameraRotationLimit: 60
   camera: {fileID: 6704904261722042724}
   zoomSpeed: 10
+--- !u!114 &8485427205708399800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8264304589407128296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 1006462682
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  DeferredDespawnTick: 0
+  Ownership: 1
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
+  SyncOwnerTransformWhenParented: 1
+  AllowOwnerToParent: 0
 --- !u!1 &8434994685959764753
 GameObject:
   m_ObjectHideFlags: 0
@@ -1448,6 +1475,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 02477e3fc35b94770be60e7aefa99e57, type: 3}
+--- !u!1 &2364221367657583676 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3397227775404619446, guid: 02477e3fc35b94770be60e7aefa99e57, type: 3}
+  m_PrefabInstance: {fileID: 1146736095972254346}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3273597639905766055 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2487150083324807213, guid: 02477e3fc35b94770be60e7aefa99e57, type: 3}
