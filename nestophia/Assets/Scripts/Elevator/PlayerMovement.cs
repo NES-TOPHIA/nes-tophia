@@ -1,6 +1,9 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
+using UnityEngine.XR.Management;
+
+
 
 public class PlayerMoveController : MonoBehaviour
 {
@@ -16,6 +19,9 @@ public class PlayerMoveController : MonoBehaviour
     [SerializeField] private float zoomSpeed = 10.0f;
 
     private static PlayerMoveController instance;
+    private bool isVRActive = false;
+
+     // VR 조이스틱 입력
 
     void Awake()
     {
@@ -36,6 +42,8 @@ public class PlayerMoveController : MonoBehaviour
         // 씬이 변경될 때마다 위치, 속도 업데이트
         SceneManager.sceneLoaded += OnSceneLoaded;
         ApplySceneSettings(SceneManager.GetActiveScene().name);
+
+        isVRActive = XRGeneralSettings.Instance.Manager.activeLoader != null;
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
@@ -67,10 +75,9 @@ public class PlayerMoveController : MonoBehaviour
     {
         Vector3 moveDirection = new Vector3(moveInput.x, 0, moveInput.y);
         Vector3 localMove = transform.TransformDirection(moveDirection);
-
-        Vector3 newPosition = transform.position + localMove * moveSpeed * Time.deltaTime;
-        transform.position = newPosition;
+        transform.position += localMove * moveSpeed * Time.deltaTime;
     }
+
 
     private void CameraRotation()
     {
