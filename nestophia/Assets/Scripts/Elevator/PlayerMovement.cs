@@ -3,12 +3,13 @@ using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
 using UnityEngine.XR.Management;
 
-
-
 public class PlayerMoveController : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 3.0f;
     private Vector2 moveInput;
+    private Vector2 lookInput;
+    private Quaternion originalRotation; 
+    private Quaternion hmdRotation = Quaternion.identity;
 
     [SerializeField] private float lookSensitivity = 2.0f;
     [SerializeField] private float cameraRotationLimit = 80f;
@@ -19,9 +20,8 @@ public class PlayerMoveController : MonoBehaviour
     [SerializeField] private float zoomSpeed = 10.0f;
 
     private static PlayerMoveController instance;
-
-     // VR 조이스틱 입력
-
+    
+    
     void Awake()
     {
         if (instance != null && instance != this)
@@ -36,7 +36,8 @@ public class PlayerMoveController : MonoBehaviour
 
     void Start()
     {
-        rigidbody = GetComponent<Rigidbody>(); 
+        rigidbody = GetComponent<Rigidbody>();
+        originalRotation = transform.rotation;
 
         // 씬이 변경될 때마다 위치, 속도 업데이트
         SceneManager.sceneLoaded += OnSceneLoaded;
@@ -58,14 +59,25 @@ public class PlayerMoveController : MonoBehaviour
     void Update()
     {
         MovePlayer();
-        CameraRotation();
-        PlayerRotation();
+        HandleLookInput(); // 마우스 및 HMD 입력을 처리하여 회전 적용
         Zoom();
     }
 
     public void OnMove(InputAction.CallbackContext context)
     {
         moveInput = context.ReadValue<Vector2>();
+    }
+
+    public void OnLook(InputAction.CallbackContext context)
+    {
+        if (context.control.device.displayName.Contains("Mouse"))
+        {
+            lookInput = context.ReadValue<Vector2>(); // ✅ 마우스 입력 처리
+        }
+        else
+        {
+            hmdRotation = context.ReadValue<Quaternion>(); // ✅ HMD 회전 처리
+        }
     }
 
     private void MovePlayer()
@@ -75,20 +87,22 @@ public class PlayerMoveController : MonoBehaviour
         transform.position += localMove * moveSpeed * Time.deltaTime;
     }
 
-
-    private void CameraRotation()
+    private void HandleLookInput()
     {
-        float xRotation = Input.GetAxisRaw("Mouse Y") * lookSensitivity;
-        currentCameraRotationX -= xRotation;
-        currentCameraRotationX = Mathf.Clamp(currentCameraRotationX, -cameraRotationLimit, cameraRotationLimit);
+        if (XRGeneralSettings.Instance.Manager.activeLoader != null)
+        {
+            float yRotation = hmdRotation.eulerAngles.y; // ✅ Yaw 값만 사용하여 플레이어 회전
+            transform.rotation = Quaternion.Euler(0, yRotation, 0);
+        }
+        else
+        {
+            // ✅ 마우스 입력으로 회전
+            currentCameraRotationX -= lookInput.y * lookSensitivity;
+            currentCameraRotationX = Mathf.Clamp(currentCameraRotationX, -cameraRotationLimit, cameraRotationLimit);
+            camera.transform.localRotation = Quaternion.Euler(currentCameraRotationX, 0f, 0f);
 
-        camera.transform.localRotation = Quaternion.Euler(currentCameraRotationX, 0f, 0f);
-    }
-
-    private void PlayerRotation()
-    {
-        float yRotation = Input.GetAxisRaw("Mouse X") * lookSensitivity;
-        transform.Rotate(Vector3.up, yRotation);
+            transform.Rotate(Vector3.up * lookInput.x * lookSensitivity);
+        }
     }
 
     private void Zoom()
