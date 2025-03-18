@@ -9,6 +9,7 @@ public class NameController : MonoBehaviour
     public TMP_InputField nicknameInput;
     public GameObject blankErrorMessage;
     public GameObject duplicateErrorMessage;
+    public GameObject clearMessage;
 
     private string nextSceneName;
     private string nickname;
@@ -49,6 +50,8 @@ public class NameController : MonoBehaviour
             {
                 Debug.Log(nickname);
                 BackendLogin.Instance.UpdateNickname(nickname);
+                clearMessage.transform.GetComponent<TMP_Text>().text = "Name Change Success!";
+                clearMessage.SetActive(true);
             }
             else
             {

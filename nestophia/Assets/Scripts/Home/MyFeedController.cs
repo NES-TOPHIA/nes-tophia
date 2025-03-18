@@ -3,6 +3,7 @@ using TMPro;
 using UnityEngine.InputSystem;
 using System.Collections;
 using System.Collections.Generic;
+using BackEnd;
 
 public class MyFeedController : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class MyFeedController : MonoBehaviour
     private GameObject player;
     private string contentText;
     private GameObject addPost;
+    private string name;
 
     void Start()
     {
@@ -71,11 +73,14 @@ public class MyFeedController : MonoBehaviour
     
     private void DeliverWriting()
     {
+        name = Backend.UserNickName;
         GameObject post = Instantiate(postPanel) as GameObject;
         post.transform.SetParent(listContent.transform, false);
 
         contentText = newPostPanel.transform.GetChild(1).GetChild(0).GetChild(2).GetComponent<TMP_Text>().text;
         post.transform.GetChild(1).GetChild(1).GetChild(0).GetComponent<TMP_Text>().text = contentText;
+
+        post.transform.GetChild(1).GetChild(0).GetComponent<TMP_Text>().text = name;
         
         ResetContent();
     }

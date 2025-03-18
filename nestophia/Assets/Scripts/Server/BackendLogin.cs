@@ -37,7 +37,7 @@ public class BackendLogin
             return false;
         }
     }
-/**
+
     public void Login(string id, string pw)
     {
         Debug.Log("로그인을 요청합니다.");
@@ -53,8 +53,6 @@ public class BackendLogin
             Debug.LogError("로그인이 실패했습니다. : " + bro);
         }
     }
-
-    **/
 
     public void UpdateNickname(string nickname)
     {
