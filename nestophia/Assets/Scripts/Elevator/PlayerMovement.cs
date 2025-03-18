@@ -1,6 +1,9 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
+using UnityEngine.XR.Management;
+
+
 
 public class PlayerMoveController : MonoBehaviour
 {
@@ -16,6 +19,8 @@ public class PlayerMoveController : MonoBehaviour
     [SerializeField] private float zoomSpeed = 10.0f;
 
     private static PlayerMoveController instance;
+
+     // VR 조이스틱 입력
 
     void Awake()
     {
@@ -67,10 +72,9 @@ public class PlayerMoveController : MonoBehaviour
     {
         Vector3 moveDirection = new Vector3(moveInput.x, 0, moveInput.y);
         Vector3 localMove = transform.TransformDirection(moveDirection);
-
-        Vector3 newPosition = transform.position + localMove * moveSpeed * Time.deltaTime;
-        transform.position = newPosition;
+        transform.position += localMove * moveSpeed * Time.deltaTime;
     }
+
 
     private void CameraRotation()
     {
