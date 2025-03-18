@@ -106,15 +106,17 @@ public class BackendFriend
         Debug.Log($"{_requestFriendList[index].Item1}이(가) 친구가 되었습니다. : " + bro);
     }
 
-    public void GetFriendList()
+    public string[] GetFriendList()
     {
         // Step 4. 친구 리스트 불러오기
+        string[] friendListString = new string[10];
+
         var bro = Backend.Friend.GetFriendList();
 
         if (bro.IsSuccess() == false)
         {
             Debug.LogError("친구 목록 불러오기 중 에러 발생 : " + bro);
-            return;
+            return friendListString;
         }
 
         Debug.Log("친구 목록 불러오기 성공 : " + bro);
@@ -122,22 +124,23 @@ public class BackendFriend
         if (bro.FlattenRows().Count <= 0)
         {
             Debug.Log("친구가 존재하지 않습니다.");
-            return;
+            return friendListString;
         }
 
         int index = 0;
 
-        string friendListString = "친구 목록\n";
-
         foreach (LitJson.JsonData friendJson in bro.FlattenRows())
         {
             string nickName = friendJson["nickname"]?.ToString();
-            string inDate = friendJson["inDate"].ToString();
+            // string inDate = friendJson["inDate"].ToString();
 
-            friendListString += $"{index}. {nickName} - {inDate}\n";
+            // friendListString += $"{index}. {nickName} - {inDate}\n";
+            friendListString[index] = nickName;
             index++;
         }
 
-        Debug.Log(friendListString);
+        Debug.Log(string.Join(", ", friendListString));
+
+        return friendListString;
     }
 }
