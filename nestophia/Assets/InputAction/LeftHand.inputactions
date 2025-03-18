@@ -1,0 +1,62 @@
+{
+    "name": "LeftHand",
+    "maps": [
+        {
+            "name": "LeftHandClick",
+            "id": "c5cafa4a-94dd-4f59-9d83-ca0e89fc8855",
+            "actions": [
+                {
+                    "name": "Click",
+                    "type": "Button",
+                    "id": "3fbe308b-5490-4075-8d9a-454944abf09f",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "a9df0e52-b6c2-4ad6-9394-889661f48aa1",
+                    "path": "<XRController>{LeftHand}/{PrimaryButton}",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Click",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "LeftHandMove",
+            "id": "9f1b2475-b918-4d1a-a879-669e29082f8f",
+            "actions": [
+                {
+                    "name": "Move",
+                    "type": "Button",
+                    "id": "79954015-ea1a-40b1-922e-986e13934042",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "51ffc607-6234-4fa8-9a0b-73a0a4495e6c",
+                    "path": "<XRController>{LeftHand}/{Primary2DAxis}",
+                    "interactions": "",
+                    "processors": "StickDeadzone",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
