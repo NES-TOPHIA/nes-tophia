@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 public class ElevatorDoor : MonoBehaviour
@@ -13,6 +14,7 @@ public class ElevatorDoor : MonoBehaviour
     private Vector3 doorRClosePosition;
 
     [SerializeField] private float openSpeed;
+
     
 
     void Start()
@@ -21,32 +23,39 @@ public class ElevatorDoor : MonoBehaviour
         doorLClosePosition = doorL.transform.position;
         doorRClosePosition = doorR.transform.position;
     }
-    void Update()
-    {
-        if(!canMove)
-        {
-            if(Input.GetMouseButtonDown(0))
-            {
-                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-                RaycastHit hit;
 
-                if(Physics.Raycast(ray, out hit))
+    public void OnButtonPress()
+    {
+        if (!canMove)
+        {
+            canMove = true;
+            Debug.Log("Controller button pressed, opening elevator doors!");
+        }
+    }
+
+    // 새 Input System 이벤트 함수
+    public void OnClick(InputAction.CallbackContext context)
+    {
+        if (context.performed && !canMove)
+        {
+            Ray ray = Camera.main.ScreenPointToRay(Mouse.current.position.ReadValue());
+            RaycastHit hit;
+
+            if (Physics.Raycast(ray, out hit))
+            {
+                if (hit.collider.gameObject.CompareTag("SelectableBtn"))
                 {
-                    if(hit.collider.gameObject.CompareTag("SelectableBtn"))
-                    {
-                        Debug.Log("btn click");
-                        canMove = true;
-                    }
+                    Debug.Log("btn click");
+                    canMove = true;
                 }
             }
         }
-        else
+    }
+    void Update()
+    {
+        if (canMove)
         {
-            if(SceneManager.GetActiveScene().name == "HomeScene")
-            {
-                GoElevator();
-            }
-            else if(SceneManager.GetActiveScene().name == "Plaza")
+            if (SceneManager.GetActiveScene().name == "HomeScene" || SceneManager.GetActiveScene().name == "Plaza")
             {
                 GoElevator();
             }
@@ -68,7 +77,7 @@ public class ElevatorDoor : MonoBehaviour
         StartCoroutine(CloseDoorAfterDelay(6f));
     }
 
-    void GoElevator()
+    public void GoElevator()
     {
         FindObjectOfType<SceneEffect>().FadeToScene("Elevator");
         Debug.Log("change Elevator Scene");
