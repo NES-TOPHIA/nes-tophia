@@ -91,17 +91,6 @@
                 },
                 {
                     "name": "",
-                    "id": "8389c773-4734-4ca5-b7f4-d85b7346d409",
-                    "path": "<XRController>{LeftHand}/{Primary2DAxis}",
-                    "interactions": "",
-                    "processors": "StickDeadzone",
-                    "groups": "",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "f5bd3db6-0e94-44b5-b42b-84602bc4b7fb",
                     "path": "<Mouse>/leftButton",
                     "interactions": "",
@@ -113,30 +102,8 @@
                 },
                 {
                     "name": "",
-                    "id": "8f044775-3a13-46df-9731-4ddccc547118",
-                    "path": "<XRController>{LeftHand}/{PrimaryButton}",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Click",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "f143cd35-cc87-4c3f-b892-ef409b19a525",
                     "path": "<Mouse>/delta",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Look",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "1accaf6d-9727-43a7-9b90-1ce32cbfc988",
-                    "path": "<XRHMD>/centerEyeRotation",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

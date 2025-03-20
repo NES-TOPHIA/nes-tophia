@@ -14,6 +14,7 @@ public class ElevatorDoor : MonoBehaviour
     private Vector3 doorRClosePosition;
 
     [SerializeField] private float openSpeed;
+
     
 
     void Start()
@@ -21,6 +22,15 @@ public class ElevatorDoor : MonoBehaviour
         canMove = false;
         doorLClosePosition = doorL.transform.position;
         doorRClosePosition = doorR.transform.position;
+    }
+
+    public void OnButtonPress()
+    {
+        if (!canMove)
+        {
+            canMove = true;
+            Debug.Log("Controller button pressed, opening elevator doors!");
+        }
     }
 
     // 새 Input System 이벤트 함수
@@ -67,7 +77,7 @@ public class ElevatorDoor : MonoBehaviour
         StartCoroutine(CloseDoorAfterDelay(6f));
     }
 
-    void GoElevator()
+    public void GoElevator()
     {
         FindObjectOfType<SceneEffect>().FadeToScene("Elevator");
         Debug.Log("change Elevator Scene");
