@@ -38,7 +38,7 @@ public class BackendLogin
         }
     }
 
-    public void Login(string id, string pw)
+    public bool Login(string id, string pw)
     {
         Debug.Log("로그인을 요청합니다.");
 
@@ -47,10 +47,12 @@ public class BackendLogin
         if (bro.IsSuccess())
         {
             Debug.Log("로그인이 성공했습니다. : " + bro);
+            return true;
         }
         else
         {
             Debug.LogError("로그인이 실패했습니다. : " + bro);
+            return false;
         }
     }
 

@@ -20,7 +20,7 @@ public class DMController : MonoBehaviour
     
     public void UpdateFriendList()
     {
-        BackendLogin.Instance.Login("4444", "1234");
+        // BackendLogin.Instance.Login("4444", "1234");
         
         string[] friendList;
         friendList = BackendFriend.Instance.GetFriendList();
@@ -30,7 +30,7 @@ public class DMController : MonoBehaviour
             {
                 GameObject friendButton = Instantiate(friendButtonPrefab) as GameObject;
                 friendButton.transform.SetParent(listContent.transform, false);
-                friendButtonPrefab.GetComponentInChildren<TMP_Text>().text = friend;
+                friendButton.transform.GetComponentInChildren<TMP_Text>().text = friend;
             }
         }
     }
@@ -50,6 +50,7 @@ public class DMController : MonoBehaviour
     {
         GameObject clickObject = EventSystem.current.currentSelectedGameObject;
         string friendName = clickObject.GetComponentInChildren<TMP_Text>().text;
+        Debug.Log(friendName);
         PlayerPrefs.SetString("friendName", friendName);
     }
 
@@ -72,7 +73,7 @@ public class DMController : MonoBehaviour
             {
                 GameObject messageTab = Instantiate(receivedMessagePrefab) as GameObject;
                 messageTab.transform.SetParent(chatContent.transform, false);
-                messageTab.GetComponentInChildren<TMP_Text>().text = message;
+                messageTab.transform.GetComponentInChildren<TMP_Text>().text = message;
             }
         }
     }
