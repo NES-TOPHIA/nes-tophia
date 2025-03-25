@@ -7,8 +7,10 @@ using UnityEngine.SceneManagement;
 
 public class ElevatorDoor : MonoBehaviour
 {
-    public GameObject doorL;
-    public GameObject doorR;
+    [SerializeField]
+    private GameObject doorL;
+    [SerializeField]
+    private GameObject doorR;
     private bool canMove;
     private Vector3 doorLClosePosition;
     private Vector3 doorRClosePosition;
