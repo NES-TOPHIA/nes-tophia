@@ -59,7 +59,11 @@ public class ElevatorDoor : MonoBehaviour
             {
                 GoElevator();
             }
-            else
+            else if(SceneManager.GetActiveScene().name == "VRHomeScene" || SceneManager.GetActiveScene().name == "VRPlaza" )
+            {
+                GoVRElevator();
+            }
+            else if(SceneManager.GetActiveScene().name == "Elevator" || SceneManager.GetActiveScene().name == "VRElevator")
             {
                 StartCoroutine(OpenAndCloseDoor());
             }
@@ -80,6 +84,11 @@ public class ElevatorDoor : MonoBehaviour
     public void GoElevator()
     {
         FindObjectOfType<SceneEffect>().FadeToScene("Elevator");
+        Debug.Log("change Elevator Scene");
+    }
+    public void GoVRElevator()
+    {
+        FindObjectOfType<SceneEffect>().FadeToScene("VRElevator");
         Debug.Log("change Elevator Scene");
     }
     void DoorOpen()
