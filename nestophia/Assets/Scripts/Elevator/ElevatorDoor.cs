@@ -7,8 +7,10 @@ using UnityEngine.SceneManagement;
 
 public class ElevatorDoor : MonoBehaviour
 {
-    public GameObject doorL;
-    public GameObject doorR;
+    [SerializeField]
+    private GameObject doorL;
+    [SerializeField]
+    private GameObject doorR;
     private bool canMove;
     private Vector3 doorLClosePosition;
     private Vector3 doorRClosePosition;
@@ -20,8 +22,6 @@ public class ElevatorDoor : MonoBehaviour
     void Start()
     {
         canMove = false;
-        doorLClosePosition = doorL.transform.position;
-        doorRClosePosition = doorR.transform.position;
     }
 
     public void OnButtonPress()
@@ -53,13 +53,24 @@ public class ElevatorDoor : MonoBehaviour
     }
     void Update()
     {
+        if (SceneManager.GetActiveScene().name == "Elevator" || SceneManager.GetActiveScene().name == "VRElevator")
+        {
+            if (doorL == null) doorL = GameObject.Find("elevator door(l)");
+            if (doorR == null) doorR = GameObject.Find("elevator door(r)");
+            doorLClosePosition = doorL.transform.position;
+            doorRClosePosition = doorR.transform.position;
+        }
         if (canMove)
         {
             if (SceneManager.GetActiveScene().name == "HomeScene" || SceneManager.GetActiveScene().name == "Plaza")
             {
                 GoElevator();
             }
-            else
+            else if (SceneManager.GetActiveScene().name == "VRHomeScene" || SceneManager.GetActiveScene().name == "VRPlaza")
+            {
+                GoVRElevator();
+            }
+            else if (SceneManager.GetActiveScene().name == "Elevator" || SceneManager.GetActiveScene().name == "VRElevator")
             {
                 StartCoroutine(OpenAndCloseDoor());
             }
@@ -80,6 +91,13 @@ public class ElevatorDoor : MonoBehaviour
     public void GoElevator()
     {
         FindObjectOfType<SceneEffect>().FadeToScene("Elevator");
+        canMove = false;
+        Debug.Log("change Elevator Scene");
+    }
+    public void GoVRElevator()
+    {
+        FindObjectOfType<SceneEffect>().FadeToScene("VRElevator");
+        canMove = false;
         Debug.Log("change Elevator Scene");
     }
     void DoorOpen()

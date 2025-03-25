@@ -26,7 +26,7 @@ public class FloorController : MonoBehaviour
         floors[1].SetActive(true);
     }
 
-    void ClickFloor(int newIndex)
+     public void ClickFloor(int newIndex)
     {
         for(int i = 0; i < floors.Length; i++)
         {
@@ -46,9 +46,14 @@ public class FloorController : MonoBehaviour
                 if(hit.collider.gameObject.CompareTag("No.1"))
                 {
                     ClickFloor(1);
-                    FindObjectOfType<SceneEffect>().FadeToScene("HomeScene");
-                    // sceneEffect.FadeToScene("HomeMinju");
-
+                    if(SceneManager.GetActiveScene().name == "Elevator")
+                    {
+                        FindObjectOfType<SceneEffect>().FadeToScene("HomeScene");
+                    }
+                    else
+                    {
+                        FindObjectOfType<SceneEffect>().FadeToScene("VRHomeScene");
+                    }
                 }
                 if(hit.collider.gameObject.CompareTag("No.2"))
                 {
@@ -85,9 +90,38 @@ public class FloorController : MonoBehaviour
                 if(hit.collider.gameObject.CompareTag("BellBtn"))
                 {
                     ClickFloor(0);
-                    FindObjectOfType<SceneEffect>().FadeToScene("Plaza");
+                    if(SceneManager.GetActiveScene().name == "Elevator")
+                    {
+                        FindObjectOfType<SceneEffect>().FadeToScene("Plaza");
+                    }
+                    else
+                    {
+                        FindObjectOfType<SceneEffect>().FadeToScene("VRPlaza");
+                    }
                 }
             }
         }   
     }
+
+    public void GoHomeScene()
+    {
+        FindObjectOfType<SceneEffect>().FadeToScene("HomeScene");
+    }
+
+    public void GoVRHomeScene()
+    {
+        FindObjectOfType<SceneEffect>().FadeToScene("VRHomeScene");
+    }
+
+    public void GoPlazaScene()
+    {
+        FindObjectOfType<SceneEffect>().FadeToScene("Plaza");
+    }
+
+    public void GoVRPlazaScene()
+    {
+        FindObjectOfType<SceneEffect>().FadeToScene("VRPlaza");
+    }
+
+
 }
