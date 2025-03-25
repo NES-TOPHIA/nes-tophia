@@ -22,6 +22,6 @@ MonoBehaviour:
   autoRefreshToken: 1
   retryWhenClientRequestFailError: 1
   retryWhenServerError: 1
-  initFailWhenDeviceIdUnknown: 1
+  initFailWhenDeviceIdUnknown: 0
   autoLoadLocationProperties: 1
   waitUntilInitializeFinish: 0

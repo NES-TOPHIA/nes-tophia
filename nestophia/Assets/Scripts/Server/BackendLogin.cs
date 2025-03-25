@@ -33,8 +33,15 @@ public class BackendLogin
         }
         else
         {
-            Debug.LogError("회원 가입에 실패했습니다. : " + bro);
-            return false;
+            if (bro.GetStatusCode() != "400")
+            {
+                Debug.LogError("회원 가입에 실패했습니다. : " + bro);
+                return false;
+            }
+            else {
+                return true;
+            }
+            
         }
     }
 
@@ -51,8 +58,14 @@ public class BackendLogin
         }
         else
         {
-            Debug.LogError("로그인이 실패했습니다. : " + bro);
-            return false;
+            if (bro.GetStatusCode() != "400")
+            {
+                Debug.LogError("로그인이 실패했습니다. : " + bro);
+                return false;
+            }
+            else {
+                return true;
+            }
         }
     }
 

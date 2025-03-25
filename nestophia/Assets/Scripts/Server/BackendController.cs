@@ -9,6 +9,10 @@ public class BackendController : MonoBehaviour
     {
         var bro = Backend.Initialize(); // 뒤끝 서버 초기화
 
+        string googlehash = Backend.Utils.GetGoogleHash();
+
+        Debug.Log("구글 해시 키 : " + googlehash);
+
         // 뒤끝 초기화에 대한 응답값
         if(bro.IsSuccess()) {
             Debug.Log("초기화 성공 : " + bro); // 성공일 경우 statusCode 204 Success
