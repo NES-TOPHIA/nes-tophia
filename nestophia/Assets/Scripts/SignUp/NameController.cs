@@ -50,7 +50,8 @@ public class NameController : MonoBehaviour
             if (NickNameDuplicateCheck() == true)
             {
                 Debug.Log(nickname);
-                BackendLogin.Instance.UpdateNickname(nickname);
+                PlayerPrefs.SetString("Nickname", nickname);
+                //BackendLogin.Instance.UpdateNickname(nickname);
                 ConfirmNickname("VRHomeScene");
             }
             else
@@ -74,7 +75,8 @@ public class NameController : MonoBehaviour
             if (NickNameDuplicateCheck() == true)
             {
                 Debug.Log(nickname);
-                BackendLogin.Instance.UpdateNickname(nickname);
+                PlayerPrefs.SetString("Nickname", nickname);
+                //BackendLogin.Instance.UpdateNickname(nickname);
                 clearMessage.transform.GetComponent<TMP_Text>().text = "Name Change Success!";
                 clearMessage.SetActive(true);
             }

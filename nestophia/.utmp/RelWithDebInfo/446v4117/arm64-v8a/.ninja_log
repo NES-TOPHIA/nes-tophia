@@ -1,19 +1,10 @@
 # ninja log v5
-1211	2317	1742927999024581607	/Users/m1nz00/Documents/GitHub/nes-tophia/nestophia/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/446v4117/obj/arm64-v8a/libgame.so	a91f64495a7329dc
-19	1211	1742927997920712091	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	d95e35106d0c6d70
-20	1070	1742927997778338407	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	e6bf9ed2803e1316
-23	1057	1742927997762184501	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	f337b3aeaadc4742
-21	1161	1742927997870335739	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	32950bd7a6e96ba4
-22	1032	1742927997737741599	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	e42f2265f05b037c
-19	1027	1742927997729518271	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	30c392ecc330df88
-20	1026	1742927997729512521	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	f5e4ef5510211ab6
-21	1027	1742927997729495062	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	5382ed7ad9c6233e
-2	793	1742928518969772807	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	30c392ecc330df88
-3	795	1742928518968336551	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	f5e4ef5510211ab6
 4	795	1742928518968431468	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	5382ed7ad9c6233e
+3	795	1742928518968336551	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	f5e4ef5510211ab6
+2	793	1742928518969772807	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	30c392ecc330df88
 4	797	1742928518976510879	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	e42f2265f05b037c
+3	917	1742928519096870464	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	32950bd7a6e96ba4
 5	821	1742928519000455029	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	f337b3aeaadc4742
 2	840	1742928519018861029	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	e6bf9ed2803e1316
-3	917	1742928519096870464	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	32950bd7a6e96ba4
 1	970	1742928519150301371	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	d95e35106d0c6d70
 970	1108	1742928519286513235	/Users/m1nz00/Documents/GitHub/nes-tophia/nestophia/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/446v4117/obj/arm64-v8a/libgame.so	a91f64495a7329dc
