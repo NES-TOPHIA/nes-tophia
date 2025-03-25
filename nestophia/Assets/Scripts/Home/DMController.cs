@@ -20,10 +20,11 @@ public class DMController : MonoBehaviour
     
     public void UpdateFriendList()
     {
-        // BackendLogin.Instance.Login("4444", "1234");
+        BackendLogin.Instance.Login("4444", "1234");
         
         string[] friendList;
         friendList = BackendFriend.Instance.GetFriendList();
+        /**
         foreach (string friend in friendList)
         {
             if (friend != null)
@@ -33,6 +34,10 @@ public class DMController : MonoBehaviour
                 friendButton.transform.GetComponentInChildren<TMP_Text>().text = friend;
             }
         }
+        **/
+        GameObject friendButton = Instantiate(friendButtonPrefab) as GameObject;
+        friendButton.transform.SetParent(listContent.transform, false);
+        friendButton.transform.GetComponentInChildren<TMP_Text>().text = "minju";
     }
 
     public void ShowChattingWithClickedFriend()
@@ -67,6 +72,7 @@ public class DMController : MonoBehaviour
     public void ShowReceivedMessage()
     {
         string[] receivedMessage = BackendChatting.Instance.GetReceivedChat();
+        /**
         foreach (string message in receivedMessage)
         {
             if (message != null)
@@ -75,6 +81,18 @@ public class DMController : MonoBehaviour
                 messageTab.transform.SetParent(chatContent.transform, false);
                 messageTab.transform.GetComponentInChildren<TMP_Text>().text = message;
             }
+        }
+        **/
+        for (int i = 0; i < 3; i++)
+        {
+            GameObject messageTab = Instantiate(receivedMessagePrefab) as GameObject;
+            messageTab.transform.SetParent(chatContent.transform, false);
+            if (i == 0)
+                messageTab.transform.GetComponentInChildren<TMP_Text>().text = "hiiii how are u";
+            else if (i == 1)
+                messageTab.transform.GetComponentInChildren<TMP_Text>().text = "also, i'm good!!!";
+            else
+                messageTab.transform.GetComponentInChildren<TMP_Text>().text = ":)))";
         }
     }
 }
