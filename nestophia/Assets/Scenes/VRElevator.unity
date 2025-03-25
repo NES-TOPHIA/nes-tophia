@@ -21180,6 +21180,7 @@ GameObject:
   - component: {fileID: 5722173124033425491}
   - component: {fileID: 7255435513775914395}
   - component: {fileID: 7255435513775914394}
+  - component: {fileID: 7255435513775914396}
   m_Layer: 0
   m_Name: Button
   m_TagString: SelectableBtn
@@ -21236,7 +21237,7 @@ MonoBehaviour:
   m_SelectEntered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 7255435513775914396}
         m_TargetAssemblyTypeName: ElevatorDoor, Assembly-CSharp
         m_MethodName: OnButtonPress
         m_Mode: 1
@@ -21291,6 +21292,21 @@ MonoBehaviour:
   m_ClampToMaxDistance: 0
   m_MaxDistance: 0
   m_PokeFilter: {fileID: 0}
+--- !u!114 &7255435513775914396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7255435513775914393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90b09e7dbc6224f109050cb6966ed650, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doorL: {fileID: 0}
+  doorR: {fileID: 0}
+  openSpeed: 0
 --- !u!4 &7261483420915273988
 Transform:
   m_ObjectHideFlags: 0
