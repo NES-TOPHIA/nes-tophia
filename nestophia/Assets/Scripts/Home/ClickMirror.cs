@@ -45,11 +45,6 @@ public class ClickMirror : MonoBehaviour
         }
     }
 
-    public void OpenCustomCanvas()
-    {
-        customCanvas.gameObject.SetActive(true);
-    }
-
     //private void OnMouseDown() {
     //    LoadClosetScene();
     //}
