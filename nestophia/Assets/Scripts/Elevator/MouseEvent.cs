@@ -9,9 +9,12 @@ public class MouseEvent : MonoBehaviour
     // Vector3 originScale;
     [SerializeField]
     private GameObject otherFeed;
+    [SerializeField]
+    private GameObject otherFeedVR;
     void Start()
     {
         otherFeed.gameObject.SetActive(false);
+        otherFeedVR.gameObject.SetActive(false);
     }
     void Update()
     {
@@ -33,10 +36,21 @@ public class MouseEvent : MonoBehaviour
             
         }
     }
+
+    public void OpenFeedVR()
+    {
+        otherFeedVR.gameObject.SetActive(true);
+    }
     public void HideFeed()
     {
         otherFeed.gameObject.SetActive(false);
     }
+
+    public void HideFeedVR()
+    {
+        otherFeedVR.gameObject.SetActive(false);
+    }
+    
     // void resetAnim()
     // {
     //     transform.position = Vector3.MoveTowards(transform.position, currentPosition, 1);

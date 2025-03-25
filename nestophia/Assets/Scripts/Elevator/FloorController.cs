@@ -26,7 +26,7 @@ public class FloorController : MonoBehaviour
         floors[1].SetActive(true);
     }
 
-    void ClickFloor(int newIndex)
+    public void ClickFloor(int newIndex)
     {
         for(int i = 0; i < floors.Length; i++)
         {
@@ -89,5 +89,15 @@ public class FloorController : MonoBehaviour
                 }
             }
         }   
+    }
+
+    public void GoHomeScene()
+    {
+        FindObjectOfType<SceneEffect>().FadeToScene("HomeScene");
+    }
+
+    public void GoPlazaScene()
+    {
+        FindObjectOfType<SceneEffect>().FadeToScene("Plaza");
     }
 }
