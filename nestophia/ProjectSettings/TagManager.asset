@@ -22,6 +22,7 @@ TagManager:
   - MirrorBtn
   - Book
   - Furniture
+  - Friends
   layers:
   - Default
   - TransparentFX
