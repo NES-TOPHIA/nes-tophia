@@ -46,9 +46,14 @@ public class FloorController : MonoBehaviour
                 if(hit.collider.gameObject.CompareTag("No.1"))
                 {
                     ClickFloor(1);
-                    FindObjectOfType<SceneEffect>().FadeToScene("HomeScene");
-                    // sceneEffect.FadeToScene("HomeMinju");
-
+                    if(SceneManager.GetActiveScene().name == "Elevator")
+                    {
+                        FindObjectOfType<SceneEffect>().FadeToScene("HomeScene");
+                    }
+                    else
+                    {
+                        FindObjectOfType<SceneEffect>().FadeToScene("VRHomeScene");
+                    }
                 }
                 if(hit.collider.gameObject.CompareTag("No.2"))
                 {
@@ -85,7 +90,14 @@ public class FloorController : MonoBehaviour
                 if(hit.collider.gameObject.CompareTag("BellBtn"))
                 {
                     ClickFloor(0);
-                    FindObjectOfType<SceneEffect>().FadeToScene("Plaza");
+                    if(SceneManager.GetActiveScene().name == "Elevator")
+                    {
+                        FindObjectOfType<SceneEffect>().FadeToScene("Plaza");
+                    }
+                    else
+                    {
+                        FindObjectOfType<SceneEffect>().FadeToScene("VRPlaza");
+                    }
                 }
             }
         }   
