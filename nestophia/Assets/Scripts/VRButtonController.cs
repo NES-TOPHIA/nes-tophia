@@ -44,10 +44,10 @@ public class VRButtonController : MonoBehaviour
         DMPanel.SetActive(!DMPanel.activeSelf);
     }
 
-    public void ClickHomeBtn()
+    public void ClickVRHomeBtn()
     {
-        Debug.Log("Home Button Clicked");
-        nextSceneName = "HomeScene";
+        Debug.Log("VRHome Button Clicked");
+        nextSceneName = "VRHomeScene";
         FindObjectOfType<SceneEffect>().FadeToScene(nextSceneName);
         // SceneManager.LoadScene(nextSceneName);
     }
@@ -72,7 +72,7 @@ public class VRButtonController : MonoBehaviour
         settingPanel.SetActive(!settingPanel.activeSelf);
     }
     
-    public void ClickMemberWithdrawBtn()
+    public void ClickVRMemberWithdrawBtn()
     {
         // 즉시 탈퇴
         Backend.BMember.WithdrawAccount(callback  => {
@@ -80,6 +80,13 @@ public class VRButtonController : MonoBehaviour
             Debug.Log("회원 탈퇴 성공");
             SceneManager.LoadScene("VRIntroScene"); // 시작 화면으로 이동
         });
+    }
+
+    public void ClickVRCarpet()
+    {
+        Debug.Log("VRFurniture Scene Loading...");
+        nextSceneName = "VRFurnitureScene";
+        FindObjectOfType<SceneEffect>().FadeToScene(nextSceneName);
     }
 
     public void ClickVRSignUpBtn()

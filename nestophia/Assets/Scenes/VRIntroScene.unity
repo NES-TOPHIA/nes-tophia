@@ -375,9 +375,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1784648523}
-        m_TargetAssemblyTypeName: ButtonController, Assembly-CSharp
-        m_MethodName: ClickSignUpBtn
+      - m_Target: {fileID: 1784648525}
+        m_TargetAssemblyTypeName: VRButtonController, Assembly-CSharp
+        m_MethodName: ClickVRSignUpBtn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -653,9 +653,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1784648523}
-        m_TargetAssemblyTypeName: ButtonController, Assembly-CSharp
-        m_MethodName: ClickSignInBtn
+      - m_Target: {fileID: 1784648525}
+        m_TargetAssemblyTypeName: VRButtonController, Assembly-CSharp
+        m_MethodName: ClickVRSignInBtn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1082,7 +1082,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1784648524}
-  - component: {fileID: 1784648523}
+  - component: {fileID: 1784648525}
   m_Layer: 0
   m_Name: ButtonManager
   m_TagString: Untagged
@@ -1090,23 +1090,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1784648523
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1784648522}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b52d1569e2a444306bab382db1689229, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  myFeedPanel: {fileID: 0}
-  newPostPanel: {fileID: 0}
-  settingPowerBtn: {fileID: 0}
-  DMPanel: {fileID: 0}
-  settingPanel: {fileID: 0}
 --- !u!4 &1784648524
 Transform:
   m_ObjectHideFlags: 0
@@ -1122,6 +1105,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1784648525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1784648522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bed3d99d5316f44d58293d93ff21c7de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myFeedPanel: {fileID: 0}
+  newPostPanel: {fileID: 0}
+  settingPowerBtn: {fileID: 0}
+  DMPanel: {fileID: 0}
+  settingPanel: {fileID: 0}
 --- !u!1 &2112045981
 GameObject:
   m_ObjectHideFlags: 0

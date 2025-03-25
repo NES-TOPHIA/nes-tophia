@@ -58005,7 +58005,6 @@ GameObject:
   - component: {fileID: 3696384164598771188}
   - component: {fileID: 9006439684662462062}
   - component: {fileID: 4098373077001096691}
-  - component: {fileID: 9006439684662462064}
   - component: {fileID: 9006439684662462063}
   - component: {fileID: 9006439684662462066}
   - component: {fileID: 9006439684662462065}
@@ -59257,21 +59256,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 7070075360768817634}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c8732277abc44a40955e67b6e49119e, type: 3}
+  m_Script: {fileID: 11500000, guid: bed3d99d5316f44d58293d93ff21c7de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonAction:
-    m_UseReference: 0
-    m_Action:
-      m_Name: Button
-      m_Type: 0
-      m_ExpectedControlType: 
-      m_Id: 079482fa-5650-4e25-93ad-44847ea3a7f6
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-      m_Flags: 0
-    m_Reference: {fileID: 0}
+  myFeedPanel: {fileID: 0}
+  newPostPanel: {fileID: 0}
+  settingPowerBtn: {fileID: 0}
+  DMPanel: {fileID: 0}
+  settingPanel: {fileID: 0}
 --- !u!222 &7084421154933749552
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -62430,30 +62422,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 5986060211943054311, guid: 02ad78cca7f19f843b49a2e580791919, type: 3}
---- !u!114 &9006439684662462064
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6302316906497590169}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c8732277abc44a40955e67b6e49119e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  buttonAction:
-    m_UseReference: 0
-    m_Action:
-      m_Name: Button
-      m_Type: 0
-      m_ExpectedControlType: 
-      m_Id: 3f2897ca-e91d-4f89-9830-83aad596d6ec
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-      m_Flags: 0
-    m_Reference: {fileID: 0}
 --- !u!114 &9006439684662462065
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62523,8 +62491,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 7070075360768817635}
-        m_TargetAssemblyTypeName: ClickCarpet, Assembly-CSharp
-        m_MethodName: LoadFurnitureScene
+        m_TargetAssemblyTypeName: VRButtonController, Assembly-CSharp
+        m_MethodName: ClickVRCarpet
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

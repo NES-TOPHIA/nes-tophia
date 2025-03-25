@@ -22,7 +22,7 @@ public class SignInController : MonoBehaviour
 
         if (BackendLogin.Instance.Login(ID, PW) == true)
         {
-            SuccessLogin();
+            SuccessLogin("HomeScene");
         }
         else
         {
@@ -30,12 +30,26 @@ public class SignInController : MonoBehaviour
         }
     }
 
-    private void SuccessLogin()
+    public void VRSignIn()
+    {
+        errorMessage.SetActive(false);
+        ID = IDInput.GetComponent<TMP_InputField>().text;
+        PW = PWInput.GetComponent<TMP_InputField>().text;
+
+        if (BackendLogin.Instance.Login(ID, PW) == true)
+        {
+            SuccessLogin("VRHomeScene");
+        }
+        else
+        {
+            errorMessage.SetActive(true);
+        }
+    }
+
+    private void SuccessLogin(string nextSceneName)
     {
         string name = Backend.UserNickName;
         Debug.Log(name);
-
-        nextSceneName = "HomeScene";
         FindObjectOfType<SceneEffect>().FadeToScene(nextSceneName);
     }
 }

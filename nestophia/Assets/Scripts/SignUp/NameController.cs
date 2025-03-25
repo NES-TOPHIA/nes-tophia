@@ -26,7 +26,32 @@ public class NameController : MonoBehaviour
             {
                 Debug.Log(nickname);
                 BackendLogin.Instance.UpdateNickname(nickname);
-                ConfirmNickname();
+                ConfirmNickname("HomeScene");
+            }
+            else
+            {
+                duplicateErrorMessage.SetActive(true);
+            }
+        }
+        else
+        {
+            blankErrorMessage.SetActive(true);
+        }
+    }
+
+    public void VRSetNickName()
+    {
+        blankErrorMessage.SetActive(false);
+        duplicateErrorMessage.SetActive(false);
+
+        nickname = nicknameInput.GetComponent<TMP_InputField>().text;
+        if (BlankCheck() == true) 
+        {
+            if (NickNameDuplicateCheck() == true)
+            {
+                Debug.Log(nickname);
+                BackendLogin.Instance.UpdateNickname(nickname);
+                ConfirmNickname("VRHomeScene");
             }
             else
             {
@@ -88,10 +113,9 @@ public class NameController : MonoBehaviour
         }
     }
 
-    private void ConfirmNickname()
+    private void ConfirmNickname(string nextSceneName)
     {
         Debug.Log("Confirm Name Button Clicked");
-        nextSceneName = "HomeScene";
         FindObjectOfType<SceneEffect>().FadeToScene(nextSceneName);
         // SceneManager.LoadScene(nextSceneName);
     }

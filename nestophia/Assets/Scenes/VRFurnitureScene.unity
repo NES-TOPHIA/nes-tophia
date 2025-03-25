@@ -460,7 +460,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 606399344}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b52d1569e2a444306bab382db1689229, type: 3}
+  m_Script: {fileID: 11500000, guid: bed3d99d5316f44d58293d93ff21c7de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   myFeedPanel: {fileID: 0}
@@ -552,8 +552,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 606399346}
-        m_TargetAssemblyTypeName: ButtonController, Assembly-CSharp
-        m_MethodName: ClickHomeBtn
+        m_TargetAssemblyTypeName: VRButtonController, Assembly-CSharp
+        m_MethodName: ClickVRHomeBtn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
