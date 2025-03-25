@@ -103,12 +103,12 @@ public class NameController : MonoBehaviour
         BackendReturnObject bro = Backend.BMember.CheckNicknameDuplication(nickname);
         if (bro.IsSuccess())
         {
-          Debug.Log("해당 닉네임은 중복되지 않습니다.");
+          Debug.Log("해당 닉네임은 중복되지 않습니다. : " + bro);
           return true;
         }
         else
         {
-          Debug.Log("해당 닉네임은 중복됩니다.");
+          Debug.Log("해당 닉네임은 중복됩니다. : " + bro);
           return false;
         }
     }
