@@ -21304,8 +21304,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90b09e7dbc6224f109050cb6966ed650, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doorL: {fileID: 0}
-  doorR: {fileID: 0}
+  doorL: {fileID: 7993719206495027803}
+  doorR: {fileID: 6067985808075387945}
   openSpeed: 0
 --- !u!4 &7261483420915273988
 Transform:
