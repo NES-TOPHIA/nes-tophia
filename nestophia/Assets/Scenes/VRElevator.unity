@@ -2496,7 +2496,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1346231957820570745, guid: de92258c569d442f2854da69992d0429, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8206538904998175269, guid: de92258c569d442f2854da69992d0429, type: 3}
       propertyPath: m_LocalPosition.x
@@ -14467,7 +14467,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2f1d006554484534b1b9d705aae1dd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  customizationManager: {fileID: 8168829920902221045}
+  customizationManagerObj: {fileID: 0}
   buttonContainer: {fileID: 1738324119327071109}
   buttonPrefab: {fileID: 909220744274468208}
 --- !u!224 &3514541062453712999
