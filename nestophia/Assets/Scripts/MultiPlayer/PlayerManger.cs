@@ -5,13 +5,16 @@ public class PlayerManager : NetworkBehaviour {
     public GameObject playerPrefab;
 
     public override void OnNetworkSpawn() {
-        if (IsServer) {
-            SpawnPlayer();
+        if (IsClient && IsOwner) {  
+            RequestSpawnPlayerServerRpc();
         }
     }
 
-    void SpawnPlayer() {
+    [ServerRpc]
+    void RequestSpawnPlayerServerRpc(ServerRpcParams rpcParams = default) {
+        if (!IsServer) return; // 서버에서만 실행
+
         GameObject player = Instantiate(playerPrefab);
-        player.GetComponent<NetworkObject>().Spawn();
+        player.GetComponent<NetworkObject>().SpawnAsPlayerObject(rpcParams.Receive.SenderClientId);
     }
 }
