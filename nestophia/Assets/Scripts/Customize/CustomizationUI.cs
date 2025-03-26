@@ -1,15 +1,25 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro; // TextMeshPro 네임스페이스 추가
+using UnityEngine.SceneManagement;
 
 public class CustomizationUI : MonoBehaviour
 {
-    public CustomizationManager customizationManager;
+    [SerializeField] private GameObject customizationManagerObj;
+    private CustomizationManager customizationManager;
     public Transform buttonContainer; // 버튼이 추가될 UI 부모 오브젝트
     public Button buttonPrefab; // UI 버튼 프리팹
 
+    
+
     void Start()
     {
+        if (SceneManager.GetActiveScene().name == "VRHomeScene")
+        {
+            if (customizationManagerObj == null) customizationManagerObj = GameObject.Find("customizationManager");
+            customizationManager = customizationManagerObj.GetComponent<CustomizationManager>();
+        }
+
         for (int i = 0; i < customizationManager.customizationEntries.Count; i++)
         {
             int index = i;
