@@ -5580,6 +5580,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 201393107}
   m_CullTransparentMesh: 0
+--- !u!114 &210220044 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4927742228586929180, guid: 3b15b51985ea541ba9e51e16cf031cef, type: 3}
+  m_PrefabInstance: {fileID: 1043934136}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90b09e7dbc6224f109050cb6966ed650, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &211208466
 GameObject:
   m_ObjectHideFlags: 0
@@ -24565,6 +24576,22 @@ PrefabInstance:
     - target: {fileID: 19644355417956719, guid: 3b15b51985ea541ba9e51e16cf031cef, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1234995231388482385, guid: 3b15b51985ea541ba9e51e16cf031cef, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1394294984045165450, guid: 3b15b51985ea541ba9e51e16cf031cef, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1602865859588723120, guid: 3b15b51985ea541ba9e51e16cf031cef, type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 210220044}
+    - target: {fileID: 1602865859588723120, guid: 3b15b51985ea541ba9e51e16cf031cef, type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnClick
       objectReference: {fileID: 0}
     - target: {fileID: 3929679244612441600, guid: 3b15b51985ea541ba9e51e16cf031cef, type: 3}
       propertyPath: m_Name
@@ -57961,8 +57988,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90b09e7dbc6224f109050cb6966ed650, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doorL: {fileID: 0}
-  doorR: {fileID: 0}
+  doorL: {fileID: 5215382567684318238}
+  doorR: {fileID: 3106833565195150025}
   openSpeed: 0
 --- !u!23 &7971107535211091132
 MeshRenderer:
