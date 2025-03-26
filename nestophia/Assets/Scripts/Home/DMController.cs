@@ -42,8 +42,8 @@ public class DMController : MonoBehaviour
 
     public void ShowChattingWithClickedFriend()
     {
-        chattingPanel.SetActive(true);
         ShowReceivedMessage();
+        chattingPanel.SetActive(true);
     }
 
     public void CloseChattingPanel()
