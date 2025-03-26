@@ -5,7 +5,10 @@ public class PlayerManager : NetworkBehaviour {
     public GameObject playerPrefab;
 
     public override void OnNetworkSpawn() {
-        if (IsClient && IsOwner) {  
+        if (IsClient) {  
+            RequestSpawnPlayerServerRpc();
+        }
+        else if(IsHost){
             RequestSpawnPlayerServerRpc();
         }
     }
