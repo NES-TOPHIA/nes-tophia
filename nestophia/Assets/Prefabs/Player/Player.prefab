@@ -56441,7 +56441,7 @@ MonoBehaviour:
   nicknameInput: {fileID: 7152522629320254275}
   blankErrorMessage: {fileID: 0}
   duplicateErrorMessage: {fileID: 5395902441474335092}
-  clearMessage: {fileID: 0}
+  clearMessage: {fileID: 5395902441474335092}
 --- !u!1 &8471599382608866398
 GameObject:
   m_ObjectHideFlags: 0
