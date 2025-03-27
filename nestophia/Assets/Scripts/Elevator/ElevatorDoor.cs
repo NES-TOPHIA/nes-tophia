@@ -96,7 +96,7 @@ public class ElevatorDoor : MonoBehaviour
     }
     public void GoVRElevator()
     {
-        FindObjectOfType<SceneEffect>().FadeToScene("VRElevator");
+        FindObjectOfType<VRSceneEffect>().FadeToScene("VRElevator");
         canMove = false;
         Debug.Log("change Elevator Scene");
     }

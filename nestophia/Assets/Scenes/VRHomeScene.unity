@@ -24570,6 +24570,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 4927742228586929180, guid: 3b15b51985ea541ba9e51e16cf031cef, type: 3}
+      propertyPath: doorL
+      value: 
+      objectReference: {fileID: 80575502294975732}
+    - target: {fileID: 4927742228586929180, guid: 3b15b51985ea541ba9e51e16cf031cef, type: 3}
+      propertyPath: doorR
+      value: 
+      objectReference: {fileID: 8572757571279423700}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
