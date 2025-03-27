@@ -24198,86 +24198,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1041712466}
   m_CullTransparentMesh: 0
---- !u!1001 &1043934136
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 19644355417956719, guid: 3b15b51985ea541ba9e51e16cf031cef, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 19644355417956719, guid: 3b15b51985ea541ba9e51e16cf031cef, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 19644355417956719, guid: 3b15b51985ea541ba9e51e16cf031cef, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -2
-      objectReference: {fileID: 0}
-    - target: {fileID: 19644355417956719, guid: 3b15b51985ea541ba9e51e16cf031cef, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 19644355417956719, guid: 3b15b51985ea541ba9e51e16cf031cef, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 19644355417956719, guid: 3b15b51985ea541ba9e51e16cf031cef, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 19644355417956719, guid: 3b15b51985ea541ba9e51e16cf031cef, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 19644355417956719, guid: 3b15b51985ea541ba9e51e16cf031cef, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 19644355417956719, guid: 3b15b51985ea541ba9e51e16cf031cef, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 19644355417956719, guid: 3b15b51985ea541ba9e51e16cf031cef, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1394294984045165450, guid: 3b15b51985ea541ba9e51e16cf031cef, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3929679244612441600, guid: 3b15b51985ea541ba9e51e16cf031cef, type: 3}
-      propertyPath: m_Name
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 4927742228586929180, guid: 3b15b51985ea541ba9e51e16cf031cef, type: 3}
-      propertyPath: doorL
-      value: 
-      objectReference: {fileID: 80575502294975732}
-    - target: {fileID: 4927742228586929180, guid: 3b15b51985ea541ba9e51e16cf031cef, type: 3}
-      propertyPath: doorR
-      value: 
-      objectReference: {fileID: 8572757571279423700}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 3b15b51985ea541ba9e51e16cf031cef, type: 3}
---- !u!114 &1043934137 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2240821881390189603, guid: 3b15b51985ea541ba9e51e16cf031cef, type: 3}
-  m_PrefabInstance: {fileID: 1043934136}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83e4e6cca11330d4088d729ab4fc9d9f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1050400379
 GameObject:
   m_ObjectHideFlags: 0
@@ -55522,7 +55442,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a35f6cfbfba9b548aaa00d52cfe8a50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_InteractionManager: {fileID: 1043934137}
+  m_InteractionManager: {fileID: 0}
   m_Colliders:
   - {fileID: 5916896616755065975}
   m_InteractionLayers:
@@ -57888,7 +57808,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a35f6cfbfba9b548aaa00d52cfe8a50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_InteractionManager: {fileID: 1043934137}
+  m_InteractionManager: {fileID: 0}
   m_Colliders:
   - {fileID: 1089655634177556036}
   m_InteractionLayers:
@@ -59654,4 +59574,3 @@ SceneRoots:
   - {fileID: 4963250650374046316}
   - {fileID: 8433404047493846250}
   - {fileID: 927827883}
-  - {fileID: 1043934136}
