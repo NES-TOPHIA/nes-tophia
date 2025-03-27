@@ -58,6 +58,10 @@ public class PlayerMoveController : MonoBehaviour
 
     void Update()
     {
+        if (SceneManager.GetActiveScene().name == "VRPlaza")
+        {
+            moveSpeed = 15;
+        }
         MovePlayer();
         HandleLookInput(); // 마우스 및 HMD 입력을 처리하여 회전 적용
         Zoom();
