@@ -4,21 +4,20 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class SceneEffect : MonoBehaviour
+public class VRSceneEffect : MonoBehaviour
 {
-    // 짧은 페이드 효과 사용법 - 각 사용법은 해당하는 인스턴스(검은색 이미지 등)가 있어야 하므로 일단 설정했던 대로 설정했음
-    // 씬 전환마다 어떤 효과를 넣을지 생각하고 인스턴스 만들고 코드 적용
-    // FindObjectOfType<SceneEffect>().FadeToScene(nextSceneName);
-
     public Image fadeImage;
     public GameObject fadeCanvas;
     public float fadeSpeed = 1.0f;
 
     private bool isFadingOut = false;
 
-    void Start()
+    void Update()
     {
-        StartCoroutine(FadeIn());
+        string lastScene = PlayerPrefs.GetString("LastScene");
+        if (SceneManager.GetActiveScene().name != lastScene) {
+            StartCoroutine(FadeIn());
+        }
     }
 
     public void FadeToScene(string sceneName)
@@ -35,6 +34,7 @@ public class SceneEffect : MonoBehaviour
             yield return null;
         }
         fadeCanvas.SetActive(false);
+        PlayerPrefs.SetString("LastScene", SceneManager.GetActiveScene().name);
     }
 
     IEnumerator FadeOutAndLoadScene(string sceneName) {
@@ -45,7 +45,7 @@ public class SceneEffect : MonoBehaviour
 
         fadeCanvas.SetActive(true);
         PlayerPrefs.SetString("LastScene", SceneManager.GetActiveScene().name);
-        
+
         float alpha = 0.0f;
         while (alpha < 1) {
             alpha += Time.deltaTime * fadeSpeed;

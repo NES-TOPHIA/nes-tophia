@@ -32,28 +32,28 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/NGO_Minimal_Setup/NGO_Setup.unity
     guid: 367c99e8ec7f94f56a04801b7005e15d
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/VRIntroScene.unity
     guid: 502d74acb7c9d4c9dbe18dfe875a5f68
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/VRHomeScene.unity
     guid: e45383f6c54f8471198aca32fb626b03
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/VRElevator.unity
     guid: d0a3de12fd4194a6aa7ac6459adb76af
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/VRPlaza.unity
     guid: 800c1b6b8c70d4a1899e1fcf84109e28
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/VRFurnitureScene.unity
     guid: aaf5fce137a0a4c56a4664d29e32e2ce
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/VRSignInScene.unity
     guid: 6394f442e8eb64b7bb870fd863efce1c
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/VRSignUpScene.unity
     guid: 92c512209ed0d48c98baaf71e6e3bb74
-  - enabled: 1
+  - enabled: 0
     path: Assets/NGO_Minimal_Setup/VRPlazaNGO.unity
     guid: 24bfb6fca41f0484ca5406902d9c0c29
   m_configObjects:
