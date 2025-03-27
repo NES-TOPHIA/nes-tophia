@@ -39,15 +39,6 @@ public class PlayerMoveController : MonoBehaviour
         rigidbody = GetComponent<Rigidbody>();
         originalRotation = transform.rotation;
 
-        if(SceneManager.GetActiveScene().name == "VRSigninScene")
-        {
-            gameObject.SetActive(false);
-        }
-        else
-        {
-            gameObject.SetActive(true);    
-        }
-
         // 씬이 변경될 때마다 위치, 속도 업데이트
         SceneManager.sceneLoaded += OnSceneLoaded;
         ApplySceneSettings(SceneManager.GetActiveScene().name);
