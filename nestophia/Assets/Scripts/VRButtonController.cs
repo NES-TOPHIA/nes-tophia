@@ -86,7 +86,8 @@ public class VRButtonController : MonoBehaviour
     {
         Debug.Log("VRFurniture Scene Loading...");
         nextSceneName = "VRFurnitureScene";
-        FindObjectOfType<VRSceneEffect>().FadeToScene(nextSceneName);
+        // FindObjectOfType<VRSceneEffect>().FadeToScene(nextSceneName);
+        SceneManager.LoadScene(nextSceneName);
     }
 
     public void ClickVRSignUpBtn()

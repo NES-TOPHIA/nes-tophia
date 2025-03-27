@@ -53,7 +53,8 @@ public class FloorController : MonoBehaviour
                     else if(SceneManager.GetActiveScene().name == "VRElevator")
                     {
                         Debug.Log("Go HomeScene");
-                        FindObjectOfType<VRSceneEffect>().FadeToScene("VRHomeScene");
+                        // FindObjectOfType<VRSceneEffect>().FadeToScene("VRHomeScene");
+                        SceneManager.LoadScene("VRHomeScene");
                     }
                 }
                 if(hit.collider.gameObject.CompareTag("No.2"))
@@ -98,7 +99,8 @@ public class FloorController : MonoBehaviour
                     else if(SceneManager.GetActiveScene().name == "VRElevator")
                     {
                         Debug.Log("Go PlazaScene");
-                        FindObjectOfType<VRSceneEffect>().FadeToScene("VRPlaza");
+                        //FindObjectOfType<VRSceneEffect>().FadeToScene("VRPlaza");
+                        SceneManager.LoadScene("VRPlaza");
                     }
                 }
             }
