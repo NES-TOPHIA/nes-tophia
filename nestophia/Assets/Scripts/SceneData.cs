@@ -26,9 +26,9 @@ public class SceneData : MonoBehaviour
         { "HomeScene", (new Vector3(-2.0f, 0.3f, -3.0f), 3.0f) }, 
         { "Plaza", (new Vector3(-6.5f, -6.0f, -71.0f), 8.0f) }, 
         { "FurnitureScene", (new Vector3(15.0f, 0.0f, 15.0f), 0.0f) },
-        { "VRElevator", (new Vector3(4.05f, -1.3f, 0.85f),3.0f) },  
+        { "VRElevator", (new Vector3(4.8f, -1.1f, 1.1f), 3.0f) },  
         { "VRHomeScene", (new Vector3(-1.0f, 0.2f, -2.0f), 4.0f) }, 
-        { "VRPlaza", (new Vector3(-6.5f, -6.0f, -71.0f), 12.0f) }, 
+        { "VRPlaza", (new Vector3(-6.5f, -6.0f, -71.0f), 15.0f) }, 
         { "VRFurnitureScene", (new Vector3(15.0f, 0.0f, 15.0f), 0.0f) }
     };
 
