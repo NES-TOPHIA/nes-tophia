@@ -114,7 +114,8 @@ public class FloorController : MonoBehaviour
 
     public void GoVRHomeScene()
     {
-        FindObjectOfType<VRSceneEffect>().FadeToScene("VRHomeScene");
+        // FindObjectOfType<VRSceneEffect>().FadeToScene("VRHomeScene");
+        SceneManager.LoadScene("VRHomeScene");
     }
 
     public void GoPlazaScene()
@@ -124,7 +125,8 @@ public class FloorController : MonoBehaviour
 
     public void GoVRPlazaScene()
     {
-        FindObjectOfType<VRSceneEffect>().FadeToScene("VRPlaza");
+        // FindObjectOfType<VRSceneEffect>().FadeToScene("VRPlaza");
+        SceneManager.LoadScene("VRPlaza");
     }
 
 
