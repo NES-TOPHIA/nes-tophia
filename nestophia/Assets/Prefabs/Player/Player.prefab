@@ -27905,14 +27905,14 @@ Transform:
   m_GameObject: {fileID: 3929679244612441600}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.2, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1206935348857204014}
   - {fileID: 8526988176220357129}
   - {fileID: 3644935740273573652}
   - {fileID: 6190987211592019178}
-  - {fileID: 1206935348857204014}
   - {fileID: 936952743260600485}
   - {fileID: 3127639736564015011}
   m_Father: {fileID: 0}
@@ -57124,13 +57124,13 @@ CharacterController:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Height: 3
+  m_Height: 2
   m_Radius: 0.4
   m_SlopeLimit: 45
   m_StepOffset: 0.5
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: -0.5, z: -0.27}
+  m_Center: {x: 0, y: -0.65, z: -0.27}
 --- !u!114 &4400118528761593670
 MonoBehaviour:
   m_ObjectHideFlags: 0
