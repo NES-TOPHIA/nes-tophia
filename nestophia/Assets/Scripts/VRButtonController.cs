@@ -48,7 +48,7 @@ public class VRButtonController : MonoBehaviour
     {
         Debug.Log("VRHome Button Clicked");
         nextSceneName = "VRHomeScene";
-        FindObjectOfType<VRSceneEffect>().FadeToScene(nextSceneName);
+        FindObjectOfType<SceneEffect>().FadeToScene(nextSceneName);
         // SceneManager.LoadScene(nextSceneName);
     }
 

@@ -1917,7 +1917,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f34e3b7f3ec754cf19fab8251cf8495f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneCamera: {fileID: 0}
+  sceneCamera: {fileID: 4945584659434209160}
   placementLayermask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -5624,7 +5624,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!120 &3758824208113893651
 LineRenderer:
   serializedVersion: 2
