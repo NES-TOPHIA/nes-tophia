@@ -35,20 +35,17 @@ public class DMController : MonoBehaviour
             }
         }
         **/
-        GameObject friendButton = Instantiate(friendButtonPrefab) as GameObject;
-        friendButton.transform.SetParent(listContent.transform, false);
-        friendButton.transform.GetComponentInChildren<TMP_Text>().text = "minju";
     }
 
     public void ShowChattingWithClickedFriend()
     {
-        ShowReceivedMessage();
+        //ShowReceivedMessage();
         chattingPanel.SetActive(true);
     }
 
     public void CloseChattingPanel()
     {
-        chattingPanel.SetActive(false);
+        chattingPanel.SetActive(!chattingPanel.activeSelf);
     }
 
     public void GetFriendsName()
@@ -82,7 +79,7 @@ public class DMController : MonoBehaviour
                 messageTab.transform.GetComponentInChildren<TMP_Text>().text = message;
             }
         }
-        **/
+        
         for (int i = 0; i < 3; i++)
         {
             GameObject messageTab = Instantiate(receivedMessagePrefab) as GameObject;
@@ -94,5 +91,6 @@ public class DMController : MonoBehaviour
             else
                 messageTab.transform.GetComponentInChildren<TMP_Text>().text = ":)))";
         }
+        **/
     }
 }
