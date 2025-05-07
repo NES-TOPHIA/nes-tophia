@@ -51,7 +51,6 @@ public class NameController : MonoBehaviour
             {
                 Debug.Log(nickname);
                 PlayerPrefs.SetString("Nickname", nickname);
-                //BackendLogin.Instance.UpdateNickname(nickname);
                 ConfirmNickname("VRHomeScene");
             }
             else
@@ -75,8 +74,28 @@ public class NameController : MonoBehaviour
             if (NickNameDuplicateCheck() == true)
             {
                 Debug.Log(nickname);
-                PlayerPrefs.SetString("Nickname", nickname);
-                //BackendLogin.Instance.UpdateNickname(nickname);
+                BackendLogin.Instance.UpdateNickname(nickname); // PC버전
+                clearMessage.transform.GetComponent<TMP_Text>().text = "Name Change Success!";
+                clearMessage.SetActive(true);
+            }
+            else
+            {
+                duplicateErrorMessage.SetActive(true);
+            }
+        }
+    }
+
+    public void VRChangeNickname()
+    {
+        duplicateErrorMessage.SetActive(false);
+
+        nickname = nicknameInput.GetComponent<TMP_InputField>().text;
+        if (BlankCheck() == true) 
+        {
+            if (NickNameDuplicateCheck() == true)
+            {
+                Debug.Log(nickname);
+                PlayerPrefs.SetString("Nickname", nickname); // VR버전
                 clearMessage.transform.GetComponent<TMP_Text>().text = "Name Change Success!";
                 clearMessage.SetActive(true);
             }

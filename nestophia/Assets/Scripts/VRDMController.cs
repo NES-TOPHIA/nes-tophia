@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine.InputSystem;
 using UnityEngine.EventSystems;
 
-public class DMController : MonoBehaviour
+public class VRDMController : MonoBehaviour
 {
     public GameObject chattingPanel;
     public GameObject friendButtonPrefab;
@@ -20,11 +20,11 @@ public class DMController : MonoBehaviour
     
     public void UpdateFriendList()
     {
-        // BackendLogin.Instance.Login("4444", "1234");
+        BackendLogin.Instance.Login("4444", "1234");
         
         string[] friendList;
         friendList = BackendFriend.Instance.GetFriendList();
-        
+        /**
         foreach (string friend in friendList)
         {
             if (friend != null)
@@ -34,11 +34,12 @@ public class DMController : MonoBehaviour
                 friendButton.transform.GetComponentInChildren<TMP_Text>().text = friend;
             }
         }
+        **/
     }
 
     public void ShowChattingWithClickedFriend()
     {
-        ShowReceivedMessage();
+        //ShowReceivedMessage();
         chattingPanel.SetActive(true);
     }
 
@@ -68,7 +69,7 @@ public class DMController : MonoBehaviour
     public void ShowReceivedMessage()
     {
         string[] receivedMessage = BackendChatting.Instance.GetReceivedChat();
-
+        /**
         foreach (string message in receivedMessage)
         {
             if (message != null)
@@ -90,5 +91,6 @@ public class DMController : MonoBehaviour
             else
                 messageTab.transform.GetComponentInChildren<TMP_Text>().text = ":)))";
         }
+        **/
     }
 }
