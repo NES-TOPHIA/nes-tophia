@@ -80,11 +80,14 @@ public class PhotoCaptureController : MonoBehaviour
         image.Apply();
     
         //파일 경로 자동 생성 (중복 방지)
-        string folderPath = Application.persistentDataPath;
+
+        string folderPath = Path.Combine(Application.persistentDataPath, "ScreenShot");
+        if (!Directory.Exists(folderPath))
+            Directory.CreateDirectory(folderPath);
+
         string extension = ".png";
         string filePath = Path.Combine(folderPath, baseFileName + extension);
         int counter = 1;
-
         while (File.Exists(filePath))
         {
             filePath = Path.Combine(folderPath, baseFileName + "_" + counter + extension);
@@ -100,6 +103,7 @@ public class PhotoCaptureController : MonoBehaviour
         captureCamera.targetTexture = originalTargetTexture;   // 거울 기능용 RenderTexture로 복구
         RenderTexture.active = currentRT;                      // GPU 상태 복구
         Destroy(image);
+
     }
 }
 
