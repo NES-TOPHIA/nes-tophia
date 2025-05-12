@@ -27871,7 +27871,7 @@ GameObject:
   - component: {fileID: 5289552833019457778}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27969,18 +27969,6 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4927742228586929180}
         m_TargetAssemblyTypeName: ElevatorDoor, Assembly-CSharp
-        m_MethodName: OnClick
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: PhotoCaptureController, Assembly-CSharp
         m_MethodName: OnClick
         m_Mode: 0
         m_Arguments:
@@ -30868,7 +30856,6 @@ MonoBehaviour:
   settingPowerBtn: {fileID: 1606585223971112740}
   DMPanel: {fileID: 777152181347156344}
   settingPanel: {fileID: 4827666489003785537}
-  friendsCountPanel: {fileID: 1041545775083490060}
 --- !u!114 &8652912161289817555
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38834,6 +38821,7 @@ Transform:
   - {fileID: 5543789188719269474}
   - {fileID: 8039520784467099951}
   - {fileID: 2852290632142780351}
+  - {fileID: 220866268311684978}
   m_Father: {fileID: 1591408130984761299}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5460245811969708417
@@ -50563,8 +50551,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: BuildingEvolutionController, Assembly-CSharp
+      - m_Target: {fileID: 7725808200552598738}
+        m_TargetAssemblyTypeName: FriendsCountManager, Assembly-CSharp
         m_MethodName: AddFriend
         m_Mode: 1
         m_Arguments:
@@ -55874,6 +55862,54 @@ Transform:
   - {fileID: 87715584326001957}
   m_Father: {fileID: 4630691864143155090}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8367344919768272932
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 220866268311684978}
+  - component: {fileID: 7725808200552598738}
+  m_Layer: 0
+  m_Name: FriendsCountManger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &220866268311684978
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8367344919768272932}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3239792849752832592}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7725808200552598738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8367344919768272932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38ee4a4f933f64df98b2dd97396ab652, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  friendsCountText: {fileID: 6047331631871646130}
+  friendsCountPanel: {fileID: 1041545775083490060}
+  friendsCount: 0
+  buildingEvolutionController: {fileID: 0}
 --- !u!1 &8385514279551809672
 GameObject:
   m_ObjectHideFlags: 0

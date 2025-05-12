@@ -11,22 +11,8 @@ public class ButtonController : MonoBehaviour
     public GameObject settingPowerBtn;
     public GameObject DMPanel;
     public GameObject settingPanel;
-    public GameObject friendsCountPanel;
 
     private string nextSceneName;
-
-    void Update()
-    {
-        if(SceneManager.GetActiveScene().name == "VRPlaza")
-        {
-            friendsCountPanel.SetActive(true);
-        }
-        else
-        {
-            friendsCountPanel.SetActive(false);
-        }
-        
-    }
 
     public void ClickCancelPostBtn()
     {
