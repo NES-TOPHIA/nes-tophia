@@ -7524,6 +7524,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 277218933}
   m_CullTransparentMesh: 0
+--- !u!1 &277710197 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1041545775083490060, guid: 3b15b51985ea541ba9e51e16cf031cef, type: 3}
+  m_PrefabInstance: {fileID: 669884301}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &282641306
 GameObject:
   m_ObjectHideFlags: 0
@@ -54915,6 +54920,7 @@ MonoBehaviour:
   settingPowerBtn: {fileID: 0}
   DMPanel: {fileID: 0}
   settingPanel: {fileID: 0}
+  friendsCountPanel: {fileID: 277710197}
 --- !u!23 &5485022659519110676
 MeshRenderer:
   m_ObjectHideFlags: 0
