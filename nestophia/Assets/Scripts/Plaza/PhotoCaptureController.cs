@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using System.IO;
+using UnityEngine.SceneManagement;
 
 
 public class PhotoCaptureController : MonoBehaviour
@@ -10,18 +11,76 @@ public class PhotoCaptureController : MonoBehaviour
     private bool isPressed;
 
    [Header("카메라와 렌더 텍스처 설정")]
-    public Camera captureCamera;                    // 오브젝트를 비추는 카메라 (거울 + 캡처 둘 다 담당)
-    public RenderTexture mirrorRenderTexture;       // 평상시 거울 기능용 RenderTexture
-    public RenderTexture captureRenderTexture;      // 사진 촬영용 RenderTexture
+   [SerializeField] public Camera captureCamera;                    // 오브젝트를 비추는 카메라 (거울 + 캡처 둘 다 담당)
+    [SerializeField] public RenderTexture mirrorRenderTexture;       // 평상시 거울 기능용 RenderTexture
+    [SerializeField] public RenderTexture captureRenderTexture;      // 사진 촬영용 RenderTexture
 
     [Header("저장 파일 설정")]
-    public string baseFileName = "CapturedObject";  // 저장할 파일명
+    [SerializeField] public string baseFileName = "CapturedObject";  // 저장할 파일명
+
+    private PlayerInput playerInput;
+
 
     void Start()
     {
         isPressed = false;
-        
-    } 
+
+        // 씬 로드 이벤트 연결
+        SceneManager.sceneLoaded += OnSceneLoaded;
+
+        // 혹시 이미 VRPlaza 씬이라면 바로 실행
+        if (SceneManager.GetActiveScene().name == "VRPlaza")
+        {
+            TryBindToPlayerInput();
+        }
+    }
+
+    void OnDestroy()
+    {
+        // 이벤트 구독 해제
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+
+        // 리스너 해제 (메모리 누수 방지)
+        UnbindFromPlayerInput();
+    }
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if (scene.name == "VRPlaza")
+        {
+            TryBindToPlayerInput();
+        }
+        else
+        {
+            UnbindFromPlayerInput();
+        }
+    }
+
+    void TryBindToPlayerInput()
+    {
+        // Player 오브젝트 찾아서 PlayerInput 얻기
+        GameObject playerObj = GameObject.FindWithTag("Player");
+        if (playerObj != null)
+        {
+            playerInput = playerObj.GetComponent<PlayerInput>();
+            if (playerInput != null)
+            {
+                Debug.Log("PlayerInput Click에 PhotoCaptureController.OnClick 연결");
+                playerInput.actions["Click"].performed -= OnClick;  // 중복 제거
+                playerInput.actions["Click"].performed += OnClick;
+            }
+        }
+    }
+
+    void UnbindFromPlayerInput()
+    {
+        if (playerInput != null)
+        {
+            Debug.Log("PlayerInput Click에서 PhotoCaptureController.OnClick 해제");
+            playerInput.actions["Click"].performed -= OnClick;
+            playerInput = null;
+        }
+    }
 
     void Update()
     {
@@ -80,11 +139,14 @@ public class PhotoCaptureController : MonoBehaviour
         image.Apply();
     
         //파일 경로 자동 생성 (중복 방지)
-        string folderPath = Application.persistentDataPath;
+
+        string folderPath = Path.Combine(Application.persistentDataPath, "ScreenShot");
+        if (!Directory.Exists(folderPath))
+            Directory.CreateDirectory(folderPath);
+
         string extension = ".png";
         string filePath = Path.Combine(folderPath, baseFileName + extension);
         int counter = 1;
-
         while (File.Exists(filePath))
         {
             filePath = Path.Combine(folderPath, baseFileName + "_" + counter + extension);
@@ -100,6 +162,7 @@ public class PhotoCaptureController : MonoBehaviour
         captureCamera.targetTexture = originalTargetTexture;   // 거울 기능용 RenderTexture로 복구
         RenderTexture.active = currentRT;                      // GPU 상태 복구
         Destroy(image);
+
     }
 }
 
