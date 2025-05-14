@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 783739428251674799}
   - component: {fileID: 1681863804263836187}
   - component: {fileID: 2045972103752400442}
+  - component: {fileID: 9119205388488436292}
   - component: {fileID: 934082204755762586}
-  - component: {fileID: 5857800123556277336}
   m_Layer: 5
   m_Name: TemporaryUIComplete
   m_TagString: Untagged
@@ -86,6 +86,20 @@ MonoBehaviour:
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
   m_PresetInfoIsWorld: 0
+--- !u!114 &9119205388488436292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1193970727451062321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59fb0945f3d4046d383e99d25802608f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_StartHostButton: {fileID: 7334787844944327828}
+  m_StartClientButton: {fileID: 8748321433979007991}
 --- !u!114 &934082204755762586
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -103,22 +117,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &5857800123556277336
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1193970727451062321}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d774adc1b25a4da6ab082e2e44438c4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_StartHostButton: {fileID: 7334787844944327828}
-  m_StartClientButton: {fileID: 8748321433979007991}
-  hostIpAddress: 192.168.0.111
-  hostPort: 7777
 --- !u!1 &2052227443347904563
 GameObject:
   m_ObjectHideFlags: 0
