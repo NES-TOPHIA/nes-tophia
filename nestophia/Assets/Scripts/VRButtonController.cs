@@ -11,6 +11,7 @@ public class VRButtonController : MonoBehaviour
     public GameObject settingPowerBtn;
     public GameObject DMPanel;
     public GameObject settingPanel;
+    public GameObject galleryPanel;
 
     private string nextSceneName;
 
@@ -98,5 +99,10 @@ public class VRButtonController : MonoBehaviour
     public void ClickVRSignInBtn()
     {
         SceneManager.LoadScene("VRSignInScene");
+    }
+
+    public void ClickGalleryBtn()
+    {
+        galleryPanel.SetActive(!galleryPanel.activeSelf);
     }
 }
