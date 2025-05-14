@@ -43480,22 +43480,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a7f13b58e9ca486d8f9abdd07491e27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myFeedPanel: {fileID: 0}
-  newPostPanel: {fileID: 0}
-  buttonAction:
-    m_UseReference: 0
-    m_Action:
-      m_Name: Button
-      m_Type: 0
-      m_ExpectedControlType: 
-      m_Id: 39503235-29f4-404b-8584-5eb005f09cc3
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-      m_Flags: 0
-    m_Reference: {fileID: 0}
-  listContent: {fileID: 0}
-  postPanel: {fileID: 7574428734419267828, guid: 6a2dca387e5914d22a5521f9fa8f98ca, type: 3}
+  framePrefab: {fileID: 0}
+  wall: {fileID: 0}
+  columnCount: 4
+  spacing: 0.2
+  startPosition: {x: -0.3, y: 0.1, z: -0.02}
+  frameSize: {x: 1.2, y: 0.9}
 --- !u!1 &6138321076236228077
 GameObject:
   m_ObjectHideFlags: 0
@@ -45969,14 +45959,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6560119640622470387}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.002615555, y: 0.7093307, z: 0.70486176, w: 0.0036353655}
+  m_LocalRotation: {x: 0.24742596, y: 0.663849, z: 0.66001314, w: 0.24993524}
   m_LocalPosition: {x: -0.026001878, y: -0.13278829, z: 0.12038638}
   m_LocalScale: {x: 1.0004159, y: 0.99916774, z: 1.0004164}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2909982948790460631}
   m_Father: {fileID: 5066940882339534296}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 104.219}
+  m_LocalEulerAnglesHint: {x: -48.818, y: 90.333, z: 89.45}
 --- !u!1 &6565529021122507075
 GameObject:
   m_ObjectHideFlags: 0
@@ -59755,14 +59745,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8731843100897596866}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.047475506, y: -0.7064935, z: -0.7049432, w: 0.040842716}
+  m_LocalRotation: {x: 0.20664443, y: -0.6456468, z: -0.6756456, w: 0.2897263}
   m_LocalPosition: {x: -0.076110736, y: -0.14211418, z: 0.1280249}
   m_LocalScale: {x: 1.000396, y: 0.9992088, z: 1.0003964}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5123713194074884199}
   m_Father: {fileID: 7865199874504553862}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -92.866}
+  m_LocalEulerAnglesHint: {x: -48.826, y: -82.943, z: -89.861}
 --- !u!1 &8743751687425718703
 GameObject:
   m_ObjectHideFlags: 0
