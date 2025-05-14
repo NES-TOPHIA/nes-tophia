@@ -15692,56 +15692,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1615c91618039cb499ab46b02e937482, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &2139242306952794973
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8917044688424464320}
-  - component: {fileID: 6238610783868517504}
-  m_Layer: 0
-  m_Name: FeedManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8917044688424464320
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2139242306952794973}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 8187888684423253392}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6238610783868517504
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2139242306952794973}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a7f13b58e9ca486d8f9abdd07491e27, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  framePrefab: {fileID: 0}
-  wall: {fileID: 0}
-  columnCount: 4
-  spacing: 0.2
-  startPosition: {x: -0.3, y: 0.1, z: -0.02}
-  frameSize: {x: 1.2, y: 0.9}
 --- !u!1 &2154598702347070701
 GameObject:
   m_ObjectHideFlags: 0
@@ -33933,7 +33883,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 174418241334883367}
-  - {fileID: 8917044688424464320}
   - {fileID: 4839264466984002301}
   - {fileID: 5888834354739233895}
   - {fileID: 1675844097030599374}
@@ -35251,7 +35200,19 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 7511847362173618938}
         m_TargetAssemblyTypeName: ButtonController, Assembly-CSharp
-        m_MethodName: ClickMenuBtn
+        m_MethodName: ClickGalleryBtn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 8330601914988038675}
+        m_TargetAssemblyTypeName: GalleryController, Assembly-CSharp
+        m_MethodName: ActiveGallery
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -57411,7 +57372,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   doorL: {fileID: 0}
   doorR: {fileID: 0}
-  openSpeed: 0.5
+  openSpeed: 0.2
 --- !u!1 &8121429305307945815
 GameObject:
   m_ObjectHideFlags: 0
@@ -58088,7 +58049,7 @@ MonoBehaviour:
   settingPowerBtn: {fileID: 5076901277047712882}
   DMPanel: {fileID: 4577650610032697090}
   settingPanel: {fileID: 455048653470746350}
-  galleryPanel: {fileID: 0}
+  galleryPanel: {fileID: 1046840424701791629}
 --- !u!114 &155225991681657176
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58096,7 +58057,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8223561935106995297}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bed3d99d5316f44d58293d93ff21c7de, type: 3}
   m_Name: 

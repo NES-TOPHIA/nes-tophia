@@ -48,7 +48,7 @@ public class GalleryController : MonoBehaviour
 
     public void OpenGallery()
     {
-        galleryPanel.SetActive(true);
+        galleryPanel.SetActive(!galleryPanel.activeSelf);
     }
 
     private void LoadImages() 
