@@ -23,6 +23,7 @@ TagManager:
   - Book
   - Furniture
   - Friends
+  - Laptop
   layers:
   - Default
   - TransparentFX

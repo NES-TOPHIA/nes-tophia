@@ -6,36 +6,37 @@ using BackEnd;
 
 public class ButtonController : MonoBehaviour
 {
-    public GameObject myFeedPanel;
-    public GameObject newPostPanel;
+    public GameObject guestbookPanel;
+    public GameObject newComentPanel;
     public GameObject settingPowerBtn;
     public GameObject DMPanel;
     public GameObject settingPanel;
+    public GameObject galleryPanel;
 
     private string nextSceneName;
 
     public void ClickCancelPostBtn()
     {
-        Debug.Log("Cancel Post Button Clicked");
-        newPostPanel.SetActive(false);
+        Debug.Log("Cancel Coment Button Clicked");
+        newComentPanel.SetActive(false);
     }
 
     public void ClickAddPostBtn()
     {
-        Debug.Log("Add Post Button Clicked");
-        newPostPanel.SetActive(true);
+        Debug.Log("Add Coment Button Clicked");
+        newComentPanel.SetActive(true);
     }
 
     public void ClickCloseFeedBtn()
     {
-        Debug.Log("Close Feed Button Clicked");
-        myFeedPanel.SetActive(false);
+        Debug.Log("Close Guestbook Button Clicked");
+        guestbookPanel.SetActive(false);
     }
 
     public void ClickUploadPostBtn()
     {
-        Debug.Log("Upload Post Button Clicked");
-        newPostPanel.SetActive(false);
+        Debug.Log("Upload Coment Button Clicked");
+        newComentPanel.SetActive(false);
     }
 
     public void ClickDMBtn()
@@ -90,5 +91,10 @@ public class ButtonController : MonoBehaviour
     public void ClickSignInBtn()
     {
         SceneManager.LoadScene("SignInScene");
+    }
+
+    public void ClickGalleryBtn()
+    {
+        galleryPanel.SetActive(!galleryPanel.activeSelf);
     }
 }
