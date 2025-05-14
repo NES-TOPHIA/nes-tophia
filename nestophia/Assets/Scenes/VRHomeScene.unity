@@ -9722,6 +9722,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1420034656}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &357499620 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2982448803861707621, guid: 3b15b51985ea541ba9e51e16cf031cef, type: 3}
+  m_PrefabInstance: {fileID: 669884301}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23ca8744dab6e49fda618da4906b942e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &357752083
 GameObject:
   m_ObjectHideFlags: 0
@@ -17266,6 +17277,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3157089380306724887, guid: 3b15b51985ea541ba9e51e16cf031cef, type: 3}
+      propertyPath: galleryPanel
+      value: 
+      objectReference: {fileID: 8922401162468871968}
     - target: {fileID: 3929679244612441600, guid: 3b15b51985ea541ba9e51e16cf031cef, type: 3}
       propertyPath: m_Name
       value: Player
@@ -17273,6 +17288,38 @@ PrefabInstance:
     - target: {fileID: 3929679244612441600, guid: 3b15b51985ea541ba9e51e16cf031cef, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6845494138809777331, guid: 3b15b51985ea541ba9e51e16cf031cef, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6845494138809777331, guid: 3b15b51985ea541ba9e51e16cf031cef, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6845494138809777331, guid: 3b15b51985ea541ba9e51e16cf031cef, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 357499620}
+    - target: {fileID: 6845494138809777331, guid: 3b15b51985ea541ba9e51e16cf031cef, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6845494138809777331, guid: 3b15b51985ea541ba9e51e16cf031cef, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ClickGalleryBtn
+      objectReference: {fileID: 0}
+    - target: {fileID: 6845494138809777331, guid: 3b15b51985ea541ba9e51e16cf031cef, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: ActiveGallery
+      objectReference: {fileID: 0}
+    - target: {fileID: 6845494138809777331, guid: 3b15b51985ea541ba9e51e16cf031cef, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: GalleryController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6845494138809777331, guid: 3b15b51985ea541ba9e51e16cf031cef, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
