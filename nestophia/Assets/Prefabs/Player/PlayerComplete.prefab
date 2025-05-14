@@ -291,7 +291,7 @@ GameObject:
   - component: {fileID: 1294819425110108324}
   m_Layer: 0
   m_Name: Main Camera
-  m_TagString: MainCamera
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10787,9 +10787,9 @@ GameObject:
   - component: {fileID: 3295215231249147376}
   - component: {fileID: 2395403628867375050}
   - component: {fileID: 4806722508293055844}
-  - component: {fileID: 2897940979416935204}
   - component: {fileID: -2697849981514134984}
   - component: {fileID: 3627804594825154448}
+  - component: {fileID: 674045924500856634}
   m_Layer: 0
   m_Name: PlayerComplete
   m_TagString: Player
@@ -10953,16 +10953,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShowTopMostFoldoutHeaderGroup: 1
-  NetworkTransformExpanded: 0
+  NetworkTransformExpanded: 1
   AuthorityMode: 0
   TickSyncChildren: 0
   UseUnreliableDeltas: 0
   SyncPositionX: 1
   SyncPositionY: 1
   SyncPositionZ: 1
-  SyncRotAngleX: 1
-  SyncRotAngleY: 1
-  SyncRotAngleZ: 1
+  SyncRotAngleX: 0
+  SyncRotAngleY: 0
+  SyncRotAngleZ: 0
   SyncScaleX: 1
   SyncScaleY: 1
   SyncScaleZ: 1
@@ -10976,20 +10976,6 @@ MonoBehaviour:
   SwitchTransformSpaceWhenParented: 0
   Interpolate: 1
   SlerpPosition: 0
---- !u!114 &2897940979416935204
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1489712893845299411}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 455521db0066b4b4280c34d2fdba6763, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ShowTopMostFoldoutHeaderGroup: 1
-  Speed: 5
 --- !u!114 &-2697849981514134984
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11085,6 +11071,19 @@ MonoBehaviour:
   cameraRotationLimit: 45
   camera: {fileID: 2217879595785694694}
   zoomSpeed: 10
+--- !u!114 &674045924500856634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1489712893845299411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97390c479165146d79f6cc9ca81cba19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerCamera: {fileID: 2217879595785694694}
 --- !u!1 &1498678015153512839
 GameObject:
   m_ObjectHideFlags: 0
