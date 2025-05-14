@@ -11,19 +11,23 @@ public class PhotoCaptureController : MonoBehaviour
     private bool isPressed;
 
    [Header("카메라와 렌더 텍스처 설정")]
-   [SerializeField] public Camera captureCamera;                    // 오브젝트를 비추는 카메라 (거울 + 캡처 둘 다 담당)
-    [SerializeField] public RenderTexture mirrorRenderTexture;       // 평상시 거울 기능용 RenderTexture
-    [SerializeField] public RenderTexture captureRenderTexture;      // 사진 촬영용 RenderTexture
+   [SerializeField] private Camera captureCamera;                    // 오브젝트를 비추는 카메라 (거울 + 캡처 둘 다 담당)
+    [SerializeField] private RenderTexture mirrorRenderTexture;       // 평상시 거울 기능용 RenderTexture
+    [SerializeField] private RenderTexture captureRenderTexture;      // 사진 촬영용 RenderTexture
 
     [Header("저장 파일 설정")]
-    [SerializeField] public string baseFileName = "CapturedObject";  // 저장할 파일명
+    [SerializeField] private string baseFileName = "CapturedObject";  // 저장할 파일명
 
     private PlayerInput playerInput;
+
+    [SerializeField] private GameObject blindPlane;
+
 
 
     void Start()
     {
         isPressed = false;
+        blindPlane.SetActive(false);
 
         // 씬 로드 이벤트 연결
         SceneManager.sceneLoaded += OnSceneLoaded;
@@ -87,6 +91,7 @@ public class PhotoCaptureController : MonoBehaviour
         if(isPressed)
         {
             CaptureObject();
+            StartCoroutine(ShowBlindPanelForSeconds(0.7f)); 
             isPressed = false;
         }
 
@@ -163,6 +168,13 @@ public class PhotoCaptureController : MonoBehaviour
         RenderTexture.active = currentRT;                      // GPU 상태 복구
         Destroy(image);
 
+
+    }
+    private IEnumerator ShowBlindPanelForSeconds(float seconds)
+    {
+        blindPlane.SetActive(true);
+        yield return new WaitForSeconds(seconds);
+        blindPlane.SetActive(false);
     }
 }
 
