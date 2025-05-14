@@ -9961,7 +9961,7 @@ LineRenderer:
   m_Positions: []
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 0.02
+    widthMultiplier: 0.01
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -10644,22 +10644,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a7f13b58e9ca486d8f9abdd07491e27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myFeedPanel: {fileID: 0}
-  newPostPanel: {fileID: 0}
-  buttonAction:
-    m_UseReference: 0
-    m_Action:
-      m_Name: Button
-      m_Type: 0
-      m_ExpectedControlType: 
-      m_Id: 39503235-29f4-404b-8584-5eb005f09cc3
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-      m_Flags: 0
-    m_Reference: {fileID: 0}
-  listContent: {fileID: 0}
-  postPanel: {fileID: 7574428734419267828, guid: 6a2dca387e5914d22a5521f9fa8f98ca, type: 3}
+  framePrefab: {fileID: 0}
+  wall: {fileID: 0}
+  columnCount: 4
+  spacing: 0.2
+  startPosition: {x: -0.3, y: 0.1, z: -0.02}
+  frameSize: {x: 1.2, y: 0.9}
 --- !u!1 &1699501136055980590
 GameObject:
   m_ObjectHideFlags: 0
@@ -24323,6 +24313,7 @@ MonoBehaviour:
   settingPowerBtn: {fileID: 1826192418733294385}
   DMPanel: {fileID: 2103547963213803563}
   settingPanel: {fileID: 262468670668714659}
+  galleryPanel: {fileID: 0}
 --- !u!114 &3523220595548419588
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24340,6 +24331,7 @@ MonoBehaviour:
   settingPowerBtn: {fileID: 0}
   DMPanel: {fileID: 0}
   settingPanel: {fileID: 0}
+  galleryPanel: {fileID: 0}
 --- !u!1 &3714735145771425426
 GameObject:
   m_ObjectHideFlags: 0
@@ -31172,7 +31164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2f1d006554484534b1b9d705aae1dd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  customizationManager: {fileID: 4704038773101119418}
+  customizationManagerObj: {fileID: 0}
   buttonContainer: {fileID: 7444507752574482313}
   buttonPrefab: {fileID: 8815861522979911854}
 --- !u!114 &5509065317375596820
@@ -55746,7 +55738,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 2604044066
+  GlobalObjectIdHash: 1441531474
   InScenePlacedSourceGlobalObjectIdHash: 0
   DeferredDespawnTick: 0
   Ownership: 1
@@ -61089,7 +61081,7 @@ LineRenderer:
   m_Positions: []
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 0.02
+    widthMultiplier: 0.01
     widthCurve:
       serializedVersion: 2
       m_Curve:
