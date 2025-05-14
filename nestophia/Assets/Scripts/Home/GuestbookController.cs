@@ -27,7 +27,7 @@ public class GuestbookController : MonoBehaviour
     {
         if (OVRInput.GetUp(OVRInput.Button.Four))
         {
-            Debug.Log("Laptop Pressed");
+            Debug.Log("Book Pressed");
             OpenGuestBook();
         }
 
@@ -38,18 +38,18 @@ public class GuestbookController : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit))
             {
-                if (hit.collider.gameObject.CompareTag("Laptop"))
+                if (hit.collider.gameObject.CompareTag("Book"))
                 {
-                    Debug.Log("Laptop Pressed");
+                    Debug.Log("Book Pressed");
                     OpenGuestBook();
                 }
             }
         }
     }
 
-    private void OnMouseDown() 
+    private void OnButtonPress() 
     {
-        Debug.Log("Laptop Pressed");
+        Debug.Log("Book Pressed");
         OpenGuestBook();
     }
 
