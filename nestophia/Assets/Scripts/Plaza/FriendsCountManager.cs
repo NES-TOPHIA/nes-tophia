@@ -9,7 +9,6 @@ public class FriendsCountManager : MonoBehaviour
     public GameObject friendsCountPanel;
     public int friendsCount = 0;
     [SerializeField] private BuildingEvolutionController buildingEvolutionController;  
-    [SerializeField] private GameObject doorController;
 
     void Start()
     {
@@ -34,14 +33,12 @@ public class FriendsCountManager : MonoBehaviour
         if (scene.name == "VRPlaza")
         {
             buildingEvolutionController = FindObjectOfType<BuildingEvolutionController>();
-            doorController.SetActive(false);
 
         }
         else
         {
             // 다른 씬으로 가면 연결 해제
             buildingEvolutionController = null;
-            doorController.SetActive(true);
         }
     }
 

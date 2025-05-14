@@ -57372,7 +57372,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   doorL: {fileID: 0}
   doorR: {fileID: 0}
-  openSpeed: 0.2
+  openSpeed: 0.5
 --- !u!1 &8121429305307945815
 GameObject:
   m_ObjectHideFlags: 0

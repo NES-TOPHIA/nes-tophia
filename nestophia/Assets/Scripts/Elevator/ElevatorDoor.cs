@@ -60,6 +60,12 @@ public class ElevatorDoor : MonoBehaviour
             doorLClosePosition = doorL.transform.position;
             doorRClosePosition = doorR.transform.position;
         }
+        else if(SceneManager.GetActiveScene().name == "VRHomeScene" || SceneManager.GetActiveScene().name == "VRPlaza")
+        {
+            if (doorL == null) doorL = GameObject.Find("Door");
+            if (doorR == null) doorR = GameObject.Find("Door");
+        }
+
         if (canMove)
         {
             if (SceneManager.GetActiveScene().name == "HomeScene" || SceneManager.GetActiveScene().name == "Plaza")
@@ -68,6 +74,7 @@ public class ElevatorDoor : MonoBehaviour
             }
             else if (SceneManager.GetActiveScene().name == "VRHomeScene" || SceneManager.GetActiveScene().name == "VRPlaza")
             {
+    
                 GoVRElevator();
             }
             else if (SceneManager.GetActiveScene().name == "Elevator" || SceneManager.GetActiveScene().name == "VRElevator")

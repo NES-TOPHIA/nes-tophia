@@ -21557,7 +21557,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   doorL: {fileID: 7993719206495027803}
   doorR: {fileID: 6067985808075387945}
-  openSpeed: 0.2
+  openSpeed: 0.5
 --- !u!4 &7261483420915273988
 Transform:
   m_ObjectHideFlags: 0
