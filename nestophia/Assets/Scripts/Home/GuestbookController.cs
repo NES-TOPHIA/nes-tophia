@@ -13,15 +13,9 @@ public class GuestbookController : MonoBehaviour
     public GameObject listContent;
     public GameObject postPanel;
 
-    private GameObject player;
     private string contentText;
     private GameObject addPost;
     private string name;
-    
-    void Start()
-    {
-        player = GameObject.Find("Player");
-    }
 
     void Update()
     {
@@ -47,7 +41,7 @@ public class GuestbookController : MonoBehaviour
         }
     }
 
-    private void OnButtonPress() 
+    private void OnMouseDown() 
     {
         Debug.Log("Book Pressed");
         OpenGuestBook();
