@@ -26,6 +26,7 @@ TagManager:
   - ShotterBtn
   - Frame
   - Laptop
+  - Image
   layers:
   - Default
   - TransparentFX

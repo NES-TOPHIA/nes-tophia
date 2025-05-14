@@ -30,9 +30,15 @@ public class GalleryController : MonoBehaviour
                 {
                     Debug.Log("Frame Pressed");
                     ActiveGallery();
+                    OpenGallery();
                 }
             }
         }
+    }
+
+    private void OnMouseDown() 
+    {
+        
     }
 
     public void ActiveGallery()
@@ -59,6 +65,12 @@ public class GalleryController : MonoBehaviour
         Debug.Log("갤러리 로딩 성공" + fullPath);
 
         string[] imagePaths = Directory.GetFiles(fullPath, "*.png");
+
+        foreach (Transform child in imageContent)
+        {
+            Destroy(child.gameObject);
+        }
+
 
         foreach (string imagePath in imagePaths)
         {
