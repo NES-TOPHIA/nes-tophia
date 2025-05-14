@@ -15736,22 +15736,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a7f13b58e9ca486d8f9abdd07491e27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myFeedPanel: {fileID: 0}
-  newPostPanel: {fileID: 0}
-  buttonAction:
-    m_UseReference: 0
-    m_Action:
-      m_Name: Button
-      m_Type: 0
-      m_ExpectedControlType: 
-      m_Id: 39503235-29f4-404b-8584-5eb005f09cc3
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-      m_Flags: 0
-    m_Reference: {fileID: 0}
-  listContent: {fileID: 0}
-  postPanel: {fileID: 7574428734419267828, guid: 6a2dca387e5914d22a5521f9fa8f98ca, type: 3}
+  framePrefab: {fileID: 0}
+  wall: {fileID: 0}
+  columnCount: 4
+  spacing: 0.2
+  startPosition: {x: -0.3, y: 0.1, z: -0.02}
+  frameSize: {x: 1.2, y: 0.9}
 --- !u!1 &2154598702347070701
 GameObject:
   m_ObjectHideFlags: 0
@@ -57421,7 +57411,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   doorL: {fileID: 0}
   doorR: {fileID: 0}
-  openSpeed: 0.2
+  openSpeed: 0.5
 --- !u!1 &8121429305307945815
 GameObject:
   m_ObjectHideFlags: 0
