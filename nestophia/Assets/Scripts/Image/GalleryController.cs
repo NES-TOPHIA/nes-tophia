@@ -11,11 +11,40 @@ public class GalleryController : MonoBehaviour
 
     private string galleryPath = "/ScreenShot";
 
+    void Update()
+    {
+        if (OVRInput.GetUp(OVRInput.Button.Four))
+        {
+            Debug.Log("Frame Pressed");
+            ActiveGallery();
+        }
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+
+            if (Physics.Raycast(ray, out hit))
+            {
+                if (hit.collider.gameObject.CompareTag("Frame"))
+                {
+                    Debug.Log("Frame Pressed");
+                    ActiveGallery();
+                }
+            }
+        }
+    }
+
     public void ActiveGallery()
     {
         LoadImages();
     }
-    
+
+    public void OpenGallery()
+    {
+        galleryPanel.SetActive(true);
+    }
+
     public void LoadImages() 
     {
         // 지정된 경로에서 이미지를 불러오기
@@ -76,68 +105,5 @@ public class GalleryController : MonoBehaviour
             **/
         }
     }
-
-
-    /**
-    // 이미지 배열
-    public GameObject[] images;
-
-    // 여러 프레임 그룹을 담는 배열 (2차원 배열 형태)
-    public GameObject[][] frameGroups;
-
-    // 각각의 프레임 그룹을 인스펙터에서 연결할 수 있도록 public 배열로 선언
-    public GameObject[] imageFrames;
-    public GameObject[] imageFrames2;
-    public GameObject[] imageFrames3;
-    public GameObject[] imageFrames4;
-
-    private int currentIndex = 0;
-
-    void Start()
-    {
-        // Start에서 2차원 배열 초기화
-        frameGroups = new GameObject[][]
-        {
-            imageFrames,
-            imageFrames2,
-            imageFrames3,
-            imageFrames4
-        };
-
-        ShowImage(currentIndex);
-    }
-
-    void ShowImage(int index)
-    {
-        // 모든 이미지 비활성화
-        foreach (GameObject image in images)
-        {
-            image.SetActive(false);
-        }
-        images[index].SetActive(true);
-
-        // 각 프레임 그룹별로 처리
-        foreach (GameObject[] group in frameGroups)
-        {
-            for (int i = 0; i < group.Length; i++)
-            {
-                group[i].SetActive(i == index);  // 현재 인덱스만 활성화
-            }
-        }
-    }
-
-    public void NextImage()
-    {
-        currentIndex = (currentIndex + 1) % images.Length;
-        ShowImage(currentIndex);
-    }
-
-    public void PreviousImage()
-    {
-        currentIndex = (currentIndex - 1 + images.Length) % images.Length;
-        ShowImage(currentIndex);
-    }
-    **/
-
 
 }
