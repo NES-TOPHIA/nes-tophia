@@ -46,7 +46,7 @@ public class ButtonController : MonoBehaviour
     public void ClickHomeBtn()
     {
         Debug.Log("Home Button Clicked");
-        nextSceneName = "HomeScene";
+        nextSceneName = "VRHomeScene";
         FindObjectOfType<SceneEffect>().FadeToScene(nextSceneName);
         // SceneManager.LoadScene(nextSceneName);
     }
@@ -77,18 +77,18 @@ public class ButtonController : MonoBehaviour
         Backend.BMember.WithdrawAccount(callback  => {
             // 이후 처리
             Debug.Log("회원 탈퇴 성공");
-            SceneManager.LoadScene("IntroScene"); // 시작 화면으로 이동
+            SceneManager.LoadScene("VRIntroScene"); // 시작 화면으로 이동
         });
     }
 
     public void ClickSignUpBtn()
     {
-        SceneManager.LoadScene("SignUpScene");
+        SceneManager.LoadScene("VRSignUpScene");
     }
 
     public void ClickSignInBtn()
     {
-        SceneManager.LoadScene("SignInScene");
+        SceneManager.LoadScene("VRSignInScene");
     }
 
     public void ClickGalleryBtn()
