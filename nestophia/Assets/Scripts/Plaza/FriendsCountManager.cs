@@ -8,8 +8,7 @@ public class FriendsCountManager : MonoBehaviour
     public TMP_Text friendsCountText;
     public GameObject friendsCountPanel;
     public int friendsCount = 0;
-    [SerializeField]
-    public BuildingEvolutionController buildingEvolutionController;  
+    [SerializeField] private BuildingEvolutionController buildingEvolutionController;  
 
     void Start()
     {
